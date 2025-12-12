@@ -1,0 +1,17 @@
+.footer {
+    padding: 1rem 0;
+    display: flex;
+    background-color: var(--colour-primary-dark);
+    width: 75vw;
+}
+
+.footer__logo {
+    height: 40px;
+    margin: 0 10px;
+}
+
+.footer__text {
+    margin: 0 auto;
+    font-family: var(--font-primary);
+    color: var(--colour-primary-text);
+}
