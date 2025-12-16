@@ -10,11 +10,13 @@ function Router() {
     return (
         <>
             <Header />
+            <main>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/blog" element={<Blog />} />
             </Routes>
+            </main>
             <Footer />
         </>
     )

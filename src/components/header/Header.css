@@ -40,6 +40,25 @@
     transition: all 0.3s ease;
 }
 
-.nav__link:hover {
-    translate: 20px 0;
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+    }
+    .header__nav {
+        margin-left: auto;
+        margin-right: 15%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-left: var(--colour-primary-dark) 2px solid;
+    }   
+    .nav__link {
+        margin: 0 15px;
+    }
+
+    .nav__link:hover {
+        translate: 20px 0;
+    }
 }
