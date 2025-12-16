@@ -1,8 +1,8 @@
 .footer {
-    padding: 1rem 0;
+    padding: 20px;
     display: flex;
-    background-color: var(--colour-primary-dark);
-    width: 75vw;
+    background-color: var(--colour-primary);
+    width: 100vw;
 }
 
 .footer__logo {
@@ -14,4 +14,13 @@
     margin: 0 auto;
     font-family: var(--font-primary);
     color: var(--colour-primary-text);
+}
+
+@media (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        align-items: center;
+        width: 75vw;
+        box-shadow: 10px 10px 0 0 var(--colour-primary-dark);
+    }
 }
