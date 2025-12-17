@@ -16,6 +16,7 @@
     font-family: var(--font-secondary);
     color: var(--colour-primary-text);
     margin: 0;
+    font-size: 3.2em;
 }
 
 .header__subtitle {
@@ -33,6 +34,13 @@
     border-left: var(--colour-primary-dark) 2px solid;
 }
 */
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
 
 .nav__link {
     font-family: var(--font-primary);

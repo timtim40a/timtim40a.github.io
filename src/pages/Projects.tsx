@@ -2,7 +2,7 @@ function Projects() {
 
     return (
         <>
-            <h1>Projects Page</h1>
+            <h1>I am working on this!</h1>
         </>
     )
 }
