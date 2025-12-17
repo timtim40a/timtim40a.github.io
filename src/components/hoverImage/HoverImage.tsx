@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import "./HoverImage.css";
 
 function HoverImage({
@@ -7,16 +8,19 @@ function HoverImage({
     alt,
     title = alt,
     link = alt,
+    github,
 }: {
     src1: string;
     src2: string;
     alt: string;
     title?: string;
     link?: string;
+    github?: string;
 }) {
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleClick = (e: ReactMouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
         setTimeout(() => {
             if (/^(https?:\/\/|\/\/|mailto:|tel:)/i.test(link)) {
                 // external link — open in new tab
@@ -26,6 +30,11 @@ function HoverImage({
                 navigate("/" + link.toLowerCase());
             }
         }, 100);
+    };
+
+    const handleGithubClick = (e: ReactMouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        window.open(github, "_blank", "noopener,noreferrer");
     };
 
     return (
@@ -40,9 +49,21 @@ function HoverImage({
                 alt={alt}
                 className="hover-image hover-image--hover"
             />
-            {alt || title ? (
-                <h2 className="hover-image__title">{title}</h2>
-            ) : null}
+            <div className="hover-image__links-container">
+                {alt || title ? (
+                    <h2 className="hover-image__title" onClick={handleClick}>
+                        {title}
+                    </h2>
+                ) : null}
+                {github && /^(https?:\/\/|\/\/|mailto:|tel:)/i.test(github) ? (
+                    <h2
+                        className="hover-image__title"
+                        onClick={handleGithubClick}
+                    >
+                        repo
+                    </h2>
+                ) : null}
+            </div>
         </div>
     );
 }

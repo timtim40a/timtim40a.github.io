@@ -11,6 +11,7 @@ function Projects() {
                 img1="graph-algorithms-visualiser.png"
                 img2="graph-algorithms-visualiser2.png"
                 alt="link"
+                github="https://github.com/timtim40a/graph-algorithms-visualiser"
             ></ProjectCard>
             <ProjectCard
                 title="Novel Forest"
@@ -19,6 +20,7 @@ function Projects() {
                 img1="novel-forest.png"
                 img2="novel-forest2.png"
                 alt="link"
+                github="https://github.com/timtim40a/novel-forest"
             ></ProjectCard>
             <ProjectCard
                 title="Framebox-Backend"
@@ -27,6 +29,7 @@ function Projects() {
                 img1="framebox.png"
                 img2="framebox2.png"
                 alt="link"
+                github="https://github.com/technative-academy/FrameBox-Backend"
             ></ProjectCard>
             <ProjectCard
                 title="Kochivnyky"
@@ -35,6 +38,7 @@ function Projects() {
                 img1="kochivnyky.png"
                 img2="kochivnyky2.png"
                 alt="link"
+                github="https://github.com/timtim40a/kochivnyky"
             ></ProjectCard>
             <ProjectCard
                 title="Cellular Automaton"
@@ -43,6 +47,7 @@ function Projects() {
                 img1="automaton.png"
                 img2="automaton2.png"
                 alt="link"
+                github="https://github.com/timtim40a/Automaton"
             ></ProjectCard>
         </>
     );

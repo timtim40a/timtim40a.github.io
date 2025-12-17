@@ -8,6 +8,7 @@ function ProjectCard({
     img1,
     img2,
     alt = title,
+    github,
 }: {
     title: string;
     description: string;
@@ -15,6 +16,7 @@ function ProjectCard({
     img1: string;
     img2?: string;
     alt?: string;
+    github?: string;
 }) {
     return (
         <>
@@ -29,6 +31,7 @@ function ProjectCard({
                         src2={img2}
                         alt={alt}
                         link={link ? link : ""}
+                        github={github ? link : ""}
                     />
                 ) : (
                     <img className="project-card__image" src={img1} alt={alt} />
