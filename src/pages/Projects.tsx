@@ -29,11 +29,19 @@ function Projects() {
                 alt="link"
             ></ProjectCard>
             <ProjectCard
-                title="Framebox-Backend"
+                title="Kochivnyky"
                 description='TypeScript, React, React Hooks, Python+Django. A website created specifically as a part of Playback Performance "..." for the audience to suggest possible names for it.'
                 link="https://timtim40a.github.io/kochivnyky/"
                 img1="kochivnyky.png"
                 img2="kochivnyky2.png"
+                alt="link"
+            ></ProjectCard>
+            <ProjectCard
+                title="Cellular Automaton"
+                description="Pyhton, tkinter. An Automaton able to simulate Convay`s game of life and other rulesets with customizable themes, speeds and a generation counter for you GoL experiments!"
+                link="https://github.com/timtim40a/Automaton"
+                img1="automaton.png"
+                img2="automaton2.png"
                 alt="link"
             ></ProjectCard>
         </>
