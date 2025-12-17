@@ -1,5 +1,3 @@
-import "./Blog.css"
-
 function Blog() {
 
     return (
