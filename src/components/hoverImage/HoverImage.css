@@ -5,6 +5,18 @@
     overflow: hidden;
 }
 
+.hover-image__title {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    color: var(--colour-primary);
+    font-family: var(--font-secondary);
+    font-size: medium;
+    padding: 5px 10px;
+    background-color: var(--colour-primary-text);
+    z-index: 20;
+}
+
 .hover-image {
     position: absolute;
     width: 45vw;
