@@ -7,6 +7,14 @@
     margin: 20px;
 }
 
+.home__techstack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: var(--font-primary);
+}
+
 @media (min-width: 767px) {
     .topic-container {
         gap: 20px;
