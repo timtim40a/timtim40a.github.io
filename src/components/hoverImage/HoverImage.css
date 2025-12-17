@@ -5,16 +5,40 @@
     overflow: hidden;
 }
 
-.hover-image__title {
+.hover-image__links-container {
     position: absolute;
     bottom: 0px;
     left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hover-image__title {
     color: var(--colour-primary);
     font-family: var(--font-secondary);
     font-size: medium;
     padding: 5px 10px;
     background-color: var(--colour-primary-text);
     z-index: 20;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--colour-secondary);
+    }
+}
+
+.hover-image__logo {
+    color: var(--colour-primary);
+    font-family: var(--font-secondary);
+    font-size: medium;
+    padding: 5px 10px;
+    background-color: var(--colour-primary-text);
+    z-index: 20;
+    height: 40px;
+    margin: 0 10px;
 }
 
 .hover-image {
@@ -35,11 +59,9 @@
     opacity: 1;
 }
 
-.hover-image--hover:target{
+.hover-image--hover:target {
     opacity: 1;
 }
-
-
 
 @media (min-width: 768px) {
     .hover-image-container {
@@ -47,15 +69,13 @@
         height: 300px;
     }
 
-    .hover-image, .hover-image--hover {
+    .hover-image,
+    .hover-image--hover {
         width: 300px;
         height: 300px;
     }
 
     .hover-image__title {
-        position: absolute;
-        bottom: 0px;
-        left: 10px;
         color: var(--colour-primary);
         font-family: var(--font-secondary);
         padding: 5px 10px;
