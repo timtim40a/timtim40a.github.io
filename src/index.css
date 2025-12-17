@@ -59,8 +59,15 @@ body {
     background-color: var(--colour-primary-text);
 }
 
-h1 {
+h1,
+h2 {
     font-family: var(--font-secondary);
+    color: var(--colour-primary);
+    margin: 20px;
+}
+
+p {
+    font-family: var(--font-primary);
     color: var(--colour-primary);
     margin: 20px;
 }
