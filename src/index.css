@@ -73,6 +73,10 @@ button:hover {
   border-color: var(--colour-primary);
 }
 
+main {
+  width: 75vw;
+}
+
 #root {
   flex-grow: 1;
   display: flex;
@@ -97,6 +101,9 @@ button:hover {
 @media (max-width: 767px) {
   #root {
     padding: 0;
-    
+  }
+
+  main {
+    width: 100vw;
   }
 }
