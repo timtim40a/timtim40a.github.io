@@ -22,7 +22,7 @@ function Home() {
                 </div>
                 <div className="topic-container">
                     <HoverImage src1="tim2.png" src2="tim4.png" alt="Blog" />
-                <   HoverImage src1="tim3.png" src2="tim5.png" alt="Projects" />
+                    <HoverImage src1="tim3.png" src2="tim5.png" alt="Projects" />
                 </div>
             </main>
         </>
