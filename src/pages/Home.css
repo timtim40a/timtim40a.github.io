@@ -1,0 +1,36 @@
+.topic-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.home__techstack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    font-family: var(--font-primary);
+}
+
+.home__title {
+    font-family: var(--font-secondary);
+    color: var(--colour-primary);
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+.home__bio {
+    font-family: var(--font-primary);
+    color: var(--colour-primary);
+    font-size: 1.125rem;
+    margin: 20px;
+}
+
+@media (min-width: 767px) {
+    .topic-container {
+        gap: 20px;
+    }
+}
