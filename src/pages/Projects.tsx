@@ -3,7 +3,7 @@ import ProjectCard from "../components/projectCard/ProjectCard";
 function Projects() {
     return (
         <>
-            <h1>I am working on this!</h1>
+            <h1>I am working on these!</h1>
             <ProjectCard
                 title="Graph Algorithms Visualiser"
                 description="The visualiser offers 7 different algorithms to see in action as well as weight-randomization, switching graph's mode between directed and undirected, creating new nodes and edges, and controlling the algorithm's animations. You can also export yours and import community graphs"
