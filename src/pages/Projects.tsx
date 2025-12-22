@@ -43,10 +43,10 @@ function Projects() {
             <ProjectCard
                 title="Cellular Automaton"
                 description="Pyhton, tkinter. An Automaton able to simulate Convay`s game of life and other rulesets with customizable themes, speeds and a generation counter for you GoL experiments!"
-                link="https://github.com/timtim40a/Automaton"
+                link=""
                 img1="automaton.png"
                 img2="automaton2.png"
-                alt="link"
+                alt=""
                 github="https://github.com/timtim40a/Automaton"
             ></ProjectCard>
         </>

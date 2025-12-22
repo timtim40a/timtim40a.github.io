@@ -55,7 +55,7 @@ function HoverImage({
                         {title}
                     </h2>
                 ) : null}
-                {github && /^(https?:\/\/|\/\/|mailto:|tel:)/i.test(github) ? (
+                {github && github.includes("https://github.com") ? (
                     <h2
                         className="hover-image__title"
                         onClick={handleGithubClick}
