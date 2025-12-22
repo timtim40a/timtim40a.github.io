@@ -31,7 +31,7 @@ function ProjectCard({
                         src2={img2}
                         alt={alt}
                         link={link ? link : ""}
-                        github={github ? link : ""}
+                        github={github ? github : ""}
                     />
                 ) : (
                     <img className="project-card__image" src={img1} alt={alt} />
