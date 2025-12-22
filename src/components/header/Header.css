@@ -39,7 +39,6 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
-    align-items: center;
 }
 
 .nav__link {
@@ -62,7 +61,7 @@
         flex-direction: column;
         gap: 15px;
         border-left: var(--colour-primary-dark) 2px solid;
-    }   
+    }
     .nav__link {
         margin: 0 15px;
         font-weight: 600;
@@ -70,6 +69,6 @@
     }
 
     .nav__link:hover {
-        translate: 20px 0;
+        translate: 10px 0;
     }
 }
