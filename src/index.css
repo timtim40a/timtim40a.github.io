@@ -60,7 +60,10 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5 {
     font-family: var(--font-secondary);
     color: var(--colour-primary);
     margin: 20px;
@@ -70,7 +73,8 @@ h2 {
     font-size: 1.5em;
 }
 
-p {
+p,
+small {
     font-family: var(--font-primary);
     color: var(--colour-primary);
     margin: 20px;
