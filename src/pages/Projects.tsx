@@ -3,7 +3,25 @@ import ProjectCard from "../components/projectCard/ProjectCard";
 function Projects() {
     return (
         <>
-            <h1>I am working on these!</h1>
+            <h1>My projects!</h1>
+            <ProjectCard
+                title="A Home"
+                description="Three.js based random house generator. To be used as an ever changing interactive postcard. Gifted in 2026."
+                link="https://ahome.timtimsays.art"
+                img1="ahome.jpg"
+                img2="ahome.jpg"
+                alt="link"
+                github="https://github.com/timtim40a/ahome"
+            ></ProjectCard>
+            <ProjectCard
+                title="Silver Lining"
+                description="Typescript, React, Redux accessibility tool that can convert enormous volumes of texts like your favourite novels into a single scrolling marquee line. Regulate the speed, font size and more! Isn't it awesome?"
+                link="https://silverlining.timtimsays.art"
+                img1="silverlining.png"
+                img2="silverlining.png"
+                alt="link"
+                github="https://github.com/timtim40a/silverlining"
+            ></ProjectCard>
             <ProjectCard
                 title="Graph Algorithms Visualiser"
                 description="The visualiser offers 7 different algorithms to see in action as well as weight-randomization, switching graph's mode between directed and undirected, creating new nodes and edges, and controlling the algorithm's animations. You can also export yours and import community graphs"
