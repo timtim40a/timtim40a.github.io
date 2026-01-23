@@ -1,0 +1,9 @@
+[
+    {
+        "slug": "blog-about-blog-development",
+        "title": "About Blog Development",
+        "date": "2026-01-23",
+        "summary": "A look at how I built this blog and what I learned along the way.",
+        "tags": ["blog", "meta", "webdev"]
+    }
+]
