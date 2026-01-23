@@ -1,10 +1,9 @@
-function Blog() {
-
+function BlogIndex() {
     return (
         <>
             <h1>No Blogs yet!</h1>
         </>
-    )
+    );
 }
 
-export default Blog
+export default BlogIndex;
