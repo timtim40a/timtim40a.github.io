@@ -1,5 +1,5 @@
 article {
-    width: 75vw;
+    width: clamp(300px, 75vw, 800px);
 }
 
 p,

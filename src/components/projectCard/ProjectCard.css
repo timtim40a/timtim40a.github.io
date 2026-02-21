@@ -1,11 +1,8 @@
 .project-card {
     display: flex;
     flex-direction: column;
-    margin: 10px;
     padding: 10px;
-    width: 90vw;
     border: dashed 8px var(--colour-primary);
-    justify-content: space-evenly;
 
     .hover-image {
         width: 100%;
@@ -49,8 +46,6 @@
     .project-card {
         display: flex;
         flex-direction: row;
-        width: 70vw;
-        margin: 20px;
         .hover-image {
             width: 100%;
             height: auto;
@@ -61,10 +56,6 @@
             height: fit-content;
             aspect-ratio: 1 / 1;
         }
-    }
-
-    .project-card:nth-of-type(even) {
-        flex-direction: row-reverse;
     }
 
     .project-card__text-container {
