@@ -45,7 +45,7 @@ function BlogPost() {
 
     return (
         <article>
-            <h1>{post.title}</h1>
+            <h3>{post.title}</h3>
             <small>{post.date}</small>
             <ReactMarkdown>{markdown}</ReactMarkdown>
         </article>

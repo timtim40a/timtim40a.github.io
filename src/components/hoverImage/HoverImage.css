@@ -16,10 +16,10 @@
 }
 
 .hover-image__title {
-    color: var(--colour-primary);
+    color: var(--colour-primary-text);
     font-family: var(--font-secondary);
     padding: 2px 4px;
-    background-color: var(--colour-primary-text);
+    background-color: var(--colour-primary);
     z-index: 20;
     transition: all 100ms ease-in-out;
 
