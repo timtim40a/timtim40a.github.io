@@ -1,3 +1,25 @@
+.projects-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.projects-arrow {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--colour-primary);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.projects-arrow:hover {
+    color: var(--colour-secondary);
+}
+
 .projects-wrapper {
     display: flex;
     gap: 20px;
@@ -10,4 +32,10 @@
 .project-card {
     scroll-snap-align: center;
     min-width: 90%;
+}
+
+@media (min-width: 768px) {
+    .projects-arrow {
+        display: flex;
+    }
 }
