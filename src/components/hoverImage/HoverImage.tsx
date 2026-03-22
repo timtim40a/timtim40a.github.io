@@ -51,17 +51,17 @@ function HoverImage({
             />
             <div className="hover-image__links-container">
                 {alt || title ? (
-                    <h2 className="hover-image__title" onClick={handleClick}>
+                    <h3 className="hover-image__title" onClick={handleClick}>
                         {title}
-                    </h2>
+                    </h3>
                 ) : null}
                 {github && github.includes("https://github.com") ? (
-                    <h2
+                    <h3
                         className="hover-image__title"
                         onClick={handleGithubClick}
                     >
                         repo
-                    </h2>
+                    </h3>
                 ) : null}
             </div>
         </div>

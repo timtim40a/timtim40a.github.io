@@ -1,7 +1,7 @@
 .footer {
     padding: 20px;
     display: flex;
-    background-color: var(--colour-primary);
+    background-color: var(--colour-orange);
     width: 100vw;
 }
 
@@ -12,8 +12,8 @@
 
 .footer__text {
     margin: 0 auto;
-    font-family: var(--font-primary);
-    color: var(--colour-primary-text);
+    font-family: var(--font-mono);
+    color: var(--colour-dark);
 }
 
 @media (min-width: 768px) {
@@ -21,6 +21,6 @@
         flex-direction: row;
         align-items: center;
         width: 75vw;
-        box-shadow: 10px 10px 0 0 var(--colour-primary-dark);
+        box-shadow: 10px 10px 0 0 var(--colour-orange-dark);
     }
 }

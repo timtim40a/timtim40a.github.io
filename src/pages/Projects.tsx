@@ -38,7 +38,7 @@ function Projects() {
 
     return (
         <>
-            <h3>Web Development</h3>
+            <h2>Web Development</h2>
             <div className="projects-section">
                 <button
                     className="projects-arrow"
@@ -67,7 +67,7 @@ function Projects() {
                     &#8594;
                 </button>
             </div>
-            <h3>Other Projects</h3>
+            <h2>Other Projects</h2>
             <div className="projects-section">
                 <button
                     className="projects-arrow"

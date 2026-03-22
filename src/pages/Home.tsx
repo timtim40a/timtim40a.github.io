@@ -8,7 +8,7 @@ function Home() {
         <>
             <main className="home__main">
                 <div>
-                    <h1 className="home__title">Hi!</h1>
+                    <h2 className="home__title">Hi!</h2>
                     <p className="home__bio">My name is in the header. I am a Full-stack software developer based in Brighton.</p>
                     <div className="home__techstack">
                         <TechLabel label="TypeScript" />

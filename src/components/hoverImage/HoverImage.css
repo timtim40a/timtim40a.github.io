@@ -16,25 +16,25 @@
 }
 
 .hover-image__title {
-    color: var(--colour-primary-text);
-    font-family: var(--font-secondary);
+    color: var(--colour-dark);
+    font-family: var(--font-pixel);
     padding: 2px 4px;
-    background-color: var(--colour-primary);
+    background-color: var(--colour-orange);
     z-index: 20;
     transition: all 100ms ease-in-out;
 
     &:hover {
         text-decoration: underline;
-        color: var(--colour-secondary);
+        color: var(--colour-orange-light);
     }
 }
 
 .hover-image__logo {
-    color: var(--colour-primary);
-    font-family: var(--font-secondary);
+    color: var(--colour-orange);
+    font-family: var(--font-pixel);
     font-size: medium;
     padding: 5px 10px;
-    background-color: var(--colour-primary-text);
+    background-color: var(--colour-dark);
     z-index: 20;
     height: 40px;
     margin: 0 10px;
@@ -75,10 +75,10 @@
     }
 
     .hover-image__title {
-        color: var(--colour-primary);
-        font-family: var(--font-secondary);
+        color: var(--colour-orange);
+        font-family: var(--font-pixel);
         padding: 5px 10px;
-        background-color: var(--colour-primary-text);
+        background-color: var(--colour-dark);
         z-index: 20;
     }
 }

@@ -8,7 +8,7 @@
     display: none;
     background: none;
     border: none;
-    color: var(--colour-primary);
+    color: var(--colour-orange);
     font-size: 2rem;
     cursor: pointer;
     padding: 5px;
@@ -17,7 +17,7 @@
 }
 
 .projects-arrow:hover {
-    color: var(--colour-secondary);
+    color: var(--colour-orange-light);
 }
 
 .projects-wrapper {

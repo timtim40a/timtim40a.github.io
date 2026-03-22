@@ -27,13 +27,13 @@ function BlogIndex() {
 
     return (
         <main>
-            <h1>Blog</h1>
+            <h2>Blog</h2>
             <ul>
                 {posts.map((post) => (
                     <li key={post.slug}>
-                        <h2>
+                        <h3>
                             <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                        </h2>
+                        </h3>
                         <small>{post.date}</small>
                         <p>{post.summary}</p>
                     </li>

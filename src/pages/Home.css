@@ -12,19 +12,19 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
-    font-family: var(--font-primary);
+    font-family: var(--font-mono);
 }
 
 .home__title {
-    font-family: var(--font-secondary);
-    color: var(--colour-primary);
+    font-family: var(--font-pixel);
+    color: var(--colour-orange);
     font-size: 2.5rem;
     margin: 20px;
 }
 
 .home__bio {
-    font-family: var(--font-primary);
-    color: var(--colour-primary);
+    font-family: var(--font-mono);
+    color: var(--colour-orange);
     font-size: 1.125rem;
     margin: 20px;
 }
