@@ -3,6 +3,7 @@
     display: flex;
     background-color: var(--colour-orange);
     width: 100vw;
+    margin-top: auto;
 }
 
 .footer__logo {
