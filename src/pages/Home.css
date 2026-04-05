@@ -1,10 +1,17 @@
 .topic-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
     margin: 20px;
+}
+
+.topic-container {
+    .hover-image-container {
+        object-fit: contain;
+        aspect-ratio: 1/1;
+    }
 }
 
 .home__techstack {
@@ -31,6 +38,34 @@
 
 @media (min-width: 767px) {
     .topic-container {
+        .hover-image-container {
+            max-width: 300px;
+            width: 25vw;
+            height: 25vw;
+        }
+
+        .hover-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .hover-image__title {
+            font-size: 0.75rem;
+        }
+
+        flex-direction: row;
         gap: 20px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .topic-container {
+        .hover-image-container {
+            max-width: none;
+        }
+        .hover-image__title {
+            font-size: initial;
+        }
     }
 }

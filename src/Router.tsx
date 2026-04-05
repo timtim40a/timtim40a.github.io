@@ -5,6 +5,7 @@ import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Artworks from "./pages/Artworks";
 
 function Router() {
     return (
@@ -12,6 +13,7 @@ function Router() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/artworks" element={<Artworks />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/blog" element={<BlogIndex />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
