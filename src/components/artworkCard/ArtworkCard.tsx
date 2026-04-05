@@ -1,4 +1,3 @@
-import HoverImage from "../hoverImage/HoverImage";
 import "./ArtworkCard.css";
 
 function ArtworkCard({
@@ -18,21 +17,13 @@ function ArtworkCard({
 }) {
     return (
         <div className="artwork-card">
+            <div className="artwork-card__image-container">
+                <img className="artwork-card__image" src={img1} alt={alt} />
+            </div>
             <div className="artwork-card__text-container">
                 <h3 className="artwork-card__title">{title}</h3>
                 <p className="artwork-card__description">{description}</p>
             </div>
-            {img2 ? (
-                <HoverImage
-                    src1={img1}
-                    src2={img2}
-                    alt={alt}
-                    link={link ? link : ""}
-                    github=""
-                />
-            ) : (
-                <img className="artwork-card__image" src={img1} alt={alt} />
-            )}
         </div>
     );
 }

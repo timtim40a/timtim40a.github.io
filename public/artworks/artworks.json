@@ -1,0 +1,12 @@
+[
+    {
+        "title": "A Home",
+        "description": "Three.js based random house generator. To be used as an ever changing interactive postcard. Gifted in 2026.",
+        "link": "https://ahome.timtimsays.art",
+        "img1": "ahome.jpg",
+        "img2": "ahome.jpg",
+        "alt": "",
+        "github": "https://github.com/timtim40a/ahome",
+        "category": "Web Development"
+    }
+]

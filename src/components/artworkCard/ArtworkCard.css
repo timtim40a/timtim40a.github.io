@@ -1,28 +1,38 @@
 .artwork-card {
     display: flex;
     flex-direction: column;
+    position: relative;
     padding: 10px;
     border: dashed 8px var(--colour-orange);
+    width: 100%;
 
-    .hover-image {
+    .artwork-card__image {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
-    .hover-image-container {
+    .artwork-card__image-container {
         display: flex;
         flex: 1 1 50%;
         width: 100%;
-        max-width: 300px;
+        max-height: 400px;
         aspect-ratio: 1 / 1;
         overflow: hidden;
+        align-self: center;
     }
 }
 
 .artwork-card__text-container {
     display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
     flex-direction: column;
-    height: fit-content;
+    height: 50%;
+    justify-content: end;
+    align-items: anchor-center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
 
 .artwork-card__description {
@@ -54,10 +64,6 @@
             height: fit-content;
             aspect-ratio: 1 / 1;
         }
-    }
-
-    .artwork-card__text-container {
-        width: 50%;
     }
 
     .artwork-card__description {
