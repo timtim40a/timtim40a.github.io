@@ -4,6 +4,8 @@
     position: relative;
     padding: 10px;
     border: dashed 8px var(--colour-orange);
+    scroll-snap-align: center;
+    min-width: 100%;
     width: 100%;
 
     .artwork-card__image {

@@ -10,6 +10,26 @@
         "category": "Visual Art"
     },
     {
+        "type": "playback-poster",
+        "title": "Playback Posters",
+        "description": "Posters for various performances primarily held by \"Kochivnyky\" playback theatre.",
+        "link": "https://www.instagram.com/kochivnyky_playback/",
+        "img1": "playback-poster.jpg",
+        "alt": "",
+        "github": "",
+        "category": "Visual Art"
+    },
+    {
+        "type": "map",
+        "title": "Guiding Maps",
+        "description": "A collection of maps created for various events and projects. Created using Adobe Illustrator and/or GoPaint.",
+        "link": "",
+        "img1": "guiding-maps.jpg",
+        "alt": "",
+        "github": "",
+        "category": "Visual Art"
+    },
+    {
         "type": null,
         "title": "A Home",
         "description": "Three.js based random house generator. To be used as an ever changing interactive postcard. Gifted in 2026.",
