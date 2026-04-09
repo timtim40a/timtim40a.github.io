@@ -3,6 +3,7 @@ import ArtworkCard from "../components/artworkCard/ArtworkCard";
 import "./Artworks.css";
 
 type Artwork = {
+    type: "artwork" | null;
     title: string;
     description: string;
     link: string;
@@ -49,6 +50,7 @@ function artworks() {
                 <div className="artworks-wrapper" ref={visualRef}>
                     {visualArtworks.map((p) => (
                         <ArtworkCard
+                            type={p.type}
                             key={p.title}
                             title={p.title}
                             description={p.description}
@@ -77,6 +79,7 @@ function artworks() {
                 <div className="artworks-wrapper" ref={otherRef}>
                     {otherArtworks.map((p) => (
                         <ArtworkCard
+                            type={p.type}
                             key={p.title}
                             title={p.title}
                             description={p.description}

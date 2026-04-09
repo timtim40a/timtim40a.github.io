@@ -1,6 +1,7 @@
 import "./ArtworkCard.css";
 
 function ArtworkCard({
+    type,
     title,
     description,
     link,
@@ -8,6 +9,7 @@ function ArtworkCard({
     img2,
     alt = title,
 }: {
+    type: "artwork" | null;
     title: string;
     description: string;
     link: string;
