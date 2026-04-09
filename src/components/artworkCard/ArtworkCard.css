@@ -33,6 +33,7 @@
     justify-content: end;
     align-items: anchor-center;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 10;
 }
 
 .artwork-card__description {

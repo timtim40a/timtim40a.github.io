@@ -4,6 +4,7 @@
 .slide-container .react-slideshow-fade-images-wrap {
     width: 100%;
     height: 100%;
+    align-items: center;
 }
 
 .slide-container .react-slideshow-fade-images-wrap > div {
