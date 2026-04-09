@@ -5,7 +5,7 @@ import "./slideshow.css";
 
 interface CloudinaryResource {
     public_id: string;
-    secure_url: string;
+    format: string;
 }
 
 interface CloudinaryListResponse {
@@ -60,7 +60,7 @@ const Slideshow = ({ tag }: { tag: string }) => {
                 {images.map((image) => (
                     <div key={image.public_id} className="slide">
                         <img
-                            src={image.secure_url}
+                            src={`https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${image.public_id}.${image.format}`}
                             alt={image.public_id}
                         />
                     </div>
