@@ -1,0 +1,41 @@
+.artworks-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.artworks-arrow {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--colour-orange);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.artworks-arrow:hover {
+    color: var(--colour-orange-light);
+}
+
+.artworks-wrapper {
+    display: flex;
+    gap: 20px;
+    width: clamp(300px, 70vw, 800px);
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 20px;
+}
+
+.project-card {
+    scroll-snap-align: center;
+    min-width: 90%;
+}
+
+@media (min-width: 768px) {
+    .artworks-arrow {
+        display: flex;
+    }
+}

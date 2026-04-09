@@ -39,13 +39,17 @@
 .header__nav {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 8px;
+    margin-top: 10px;
 }
 
 .nav__link {
     font-family: var(--font-mono);
     color: var(--colour-dark);
     text-decoration: none;
+    background-color: var(--colour-orange-light);
+    text-align: center;
+    padding: 0 8px;
 }
 
 @media (min-width: 768px) {
@@ -67,6 +71,8 @@
         margin: 0 15px;
         font-weight: 600;
         transition: all 0.3s ease;
+        background-color: transparent;
+        text-align: left;
     }
 
     .nav__link:hover {
