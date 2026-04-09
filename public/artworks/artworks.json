@@ -1,5 +1,17 @@
 [
     {
+        "type": "artwork",
+        "title": "Sketches",
+        "description": "A collection of sketches and doodles. Created using various tools on traditional media.",
+        "link": "",
+        "img1": "sketches.jpg",
+        "img2": "sketches.jpg",
+        "alt": "",
+        "github": "",
+        "category": "Visual Art"
+    },
+    {
+        "type": null,
         "title": "A Home",
         "description": "Three.js based random house generator. To be used as an ever changing interactive postcard. Gifted in 2026.",
         "link": "https://ahome.timtimsays.art",

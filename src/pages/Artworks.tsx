@@ -36,6 +36,7 @@ function artworks() {
 
     const visualArtworks = artworks.filter((p) => p.category === "Visual Art");
     const otherArtworks = artworks.filter((p) => p.category !== "Visual Art");
+    console.log(artworks, visualArtworks, otherArtworks);
 
     return (
         <>

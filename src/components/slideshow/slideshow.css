@@ -1,0 +1,22 @@
+.slide-container,
+.slide-container .react-slideshow-container,
+.slide-container .react-slideshow-fade-wrapper,
+.slide-container .react-slideshow-fade-images-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-container .react-slideshow-fade-images-wrap > div {
+    height: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
