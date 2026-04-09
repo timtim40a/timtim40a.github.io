@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Slideshow from "../slideshow/slideshow";
 import "./ArtworkCard.css";
 
@@ -7,7 +8,6 @@ function ArtworkCard({
     description,
     link,
     img1,
-    img2,
     alt = title,
 }: {
     type: "artwork" | null;
@@ -19,7 +19,7 @@ function ArtworkCard({
     alt?: string;
 }) {
     return (
-        <div className="artwork-card">
+        <Link to={link} className="artwork-card">
             <div className="artwork-card__image-container">
                 {!type ? (
                     <img className="artwork-card__image" src={img1} alt={alt} />
@@ -31,7 +31,7 @@ function ArtworkCard({
                 <h3 className="artwork-card__title">{title}</h3>
                 <p className="artwork-card__description">{description}</p>
             </div>
-        </div>
+        </Link>
     );
 }
 
