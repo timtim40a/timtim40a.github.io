@@ -4,6 +4,11 @@
     gap: 10px;
 }
 
+.projects-description {
+    width: 75vw;
+    margin: 20px auto;
+}
+
 .projects-arrow {
     display: none;
     background: none;

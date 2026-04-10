@@ -33,7 +33,9 @@ function Projects() {
         }
     }
 
-    const webProjects = projects.filter((p) => p.category === "Web Development");
+    const webProjects = projects.filter(
+        (p) => p.category === "Web Development"
+    );
     const otherProjects = projects.filter((p) => p.category === "Other");
 
     return (
@@ -96,6 +98,17 @@ function Projects() {
                     &#8594;
                 </button>
             </div>
+            <p className="projects-description">
+                I have experience in web development, having created multiple
+                projects using <strong>React</strong>, <strong>Node.js</strong>,
+                and other technologies. These include innovative solutions{" "}
+                <strong>utilising AI</strong>; regular, well structured
+                full-stack web-apps (database management, user authentication,
+                API integration), and quirky creative projects that explore the
+                intersection of technology and art. I love to (and proud to be
+                able to) push the boundaries of what's possible with web
+                technologies.
+            </p>
         </>
     );
 }
