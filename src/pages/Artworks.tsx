@@ -40,6 +40,13 @@ function artworks() {
 
     return (
         <>
+            <p className="artworks-description">
+                I practice multimedia art using various tools. I explore various
+                topics and mediums that appear alongside modern technologies,
+                integrating them into understandable formats. I stand for
+                ethical AI usage and therefore disapprove of AI assisted
+                "creativity"
+            </p>
             <h2>Visual Art</h2>
             <div className="artworks-section">
                 <button
