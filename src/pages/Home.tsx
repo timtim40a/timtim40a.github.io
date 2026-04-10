@@ -10,16 +10,20 @@ function Home() {
                     <h2 className="home__title">Hi!</h2>
                     <p className="home__bio">
                         My name is in the header. I am a Full-stack software
-                        developer based in Brighton.
+                        developer and multimedia artist based in Brighton. Click
+                        the photos below to get to know my work better.
                     </p>
                     <div className="home__techstack">
                         <TechLabel label="TypeScript" />
                         <TechLabel label="React" />
                         <TechLabel label="Redux" />
+                        <TechLabel label="Next.js" />
                         <TechLabel label="Node.js" />
                         <TechLabel label="Python" />
                         <TechLabel label="Express" />
                         <TechLabel label="PostgreSQL" />
+                        <TechLabel label="Headless CMS" />
+                        <TechLabel label="Figma" />
                     </div>
                 </div>
                 <div className="topic-container">
