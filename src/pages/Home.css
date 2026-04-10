@@ -9,8 +9,15 @@
 
 .topic-container {
     .hover-image-container {
+        width: clamp(200px, 60vw, 300px);
+        height: clamp(200px, 60vw, 300px);
         object-fit: contain;
         aspect-ratio: 1/1;
+    }
+
+    .hover-image {
+        width: clamp(200px, 60vw, 300px);
+        height: clamp(200px, 60vw, 300px);
     }
 }
 

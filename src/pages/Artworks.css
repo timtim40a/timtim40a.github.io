@@ -4,6 +4,11 @@
     gap: 10px;
 }
 
+.artworks-description {
+    width: 75vw;
+    margin: 20px auto;
+}
+
 .artworks-arrow {
     display: none;
     background: none;
