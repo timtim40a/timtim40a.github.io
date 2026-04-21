@@ -1,5 +1,25 @@
 [
     {
+        "title": "Kochivnyky Playback",
+        "description": "A portfolio website for a modern improvisation theatre group \"Kochivnyky\" (of which I am proudly part of). Built with React, TypeScript, Next.js and Sanity CMS.",
+        "link": "https://kochivnyky-portfolio.vercel.app/",
+        "img1": "portfolioKochivnyky.png",
+        "img2": "portfolioKochivnyky.png",
+        "alt": "link",
+        "github": "https://github.com/timtim40a/kochivnyky-portfolio",
+        "category": "Web Development"
+    },
+    {
+        "title": "Potfolio Website",
+        "description": "Professional artist's portfolio featuring unique design and responsive layout. React, TypeScript, Next.js, Sanity CMS.",
+        "link": "https://altuniaa-portfolio.vercel.app/",
+        "img1": "portfolioAlona.png",
+        "img2": "portfolioAlona.png",
+        "alt": "link",
+        "github": "https://github.com/timtim40a/altuniaa-portfolio",
+        "category": "Web Development"
+    },
+    {
         "title": "A Home",
         "description": "Three.js based random house generator. To be used as an ever changing interactive postcard. Gifted in 2026.",
         "link": "https://ahome.timtimsays.art",
@@ -50,14 +70,14 @@
         "category": "Web Development"
     },
     {
-        "title": "Kochivnyky",
+        "title": "Multimedia project \"...\" for Playback Performance",
         "description": "TypeScript, React, React Hooks, Python+Django. A website created specifically as a part of Playback Performance \"...\" for the audience to suggest possible names for it.",
         "link": "https://timtim40a.github.io/kochivnyky/",
         "img1": "kochivnyky.png",
         "img2": "kochivnyky2.png",
         "alt": "link",
         "github": "https://github.com/timtim40a/kochivnyky",
-        "category": "Web Development"
+        "category": "Other"
     },
     {
         "title": "Cellular Automaton",
