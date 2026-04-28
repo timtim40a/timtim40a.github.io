@@ -1,0 +1,10 @@
+.tech-label {
+    display: flex;
+    background-color: var(--colour-orange);
+    color: var(--colour-dark);
+    padding: 4px 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 2px;
+    box-shadow: 7px 7px 0 0 var(--colour-orange-dark);
+}

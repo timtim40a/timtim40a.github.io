@@ -1,0 +1,72 @@
+'use client'
+import { useRouter } from 'next/navigation'
+import type { MouseEvent as ReactMouseEvent } from 'react'
+import './HoverImage.css'
+
+function HoverImage({
+    src1,
+    src2,
+    alt,
+    title = alt,
+    link = alt,
+    github,
+}: {
+    src1: string
+    src2: string
+    alt: string
+    title?: string
+    link?: string
+    github?: string
+}) {
+    const router = useRouter()
+
+    const handleClick = (e: ReactMouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
+        setTimeout(() => {
+            if (/^(https?:\/\/|\/\/|mailto:|tel:)/i.test(link)) {
+                // external link — open in new tab
+                window.open(link, '_blank', 'noopener,noreferrer')
+            } else {
+                // internal route
+                router.push('/' + link.toLowerCase())
+            }
+        }, 100)
+    }
+
+    const handleGithubClick = (e: ReactMouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
+        window.open(github, '_blank', 'noopener,noreferrer')
+    }
+
+    return (
+        <div className="hover-image-container" onClick={handleClick}>
+            <img
+                src={src1}
+                alt={alt}
+                className="hover-image hover-image--default"
+            />
+            <img
+                src={src2}
+                alt={alt}
+                className="hover-image hover-image--hover"
+            />
+            <div className="hover-image__links-container">
+                {alt || title ?
+                    <h3 className="hover-image__title" onClick={handleClick}>
+                        {title}
+                    </h3>
+                :   null}
+                {github && github.includes('https://github.com') ?
+                    <h3
+                        className="hover-image__title"
+                        onClick={handleGithubClick}
+                    >
+                        repo
+                    </h3>
+                :   null}
+            </div>
+        </div>
+    )
+}
+
+export default HoverImage
