@@ -1,72 +1,74 @@
-'use client'
-import { useRouter } from 'next/navigation'
-import type { MouseEvent as ReactMouseEvent } from 'react'
-import './HoverImage.css'
+"use client";
+import { useRouter } from "next/navigation";
+import type { MouseEvent as ReactMouseEvent } from "react";
+import styles from "./hoverImage.module.css";
 
 function HoverImage({
     src1,
     src2,
     alt,
+    className = "",
     title = alt,
     link = alt,
     github,
 }: {
-    src1: string
-    src2: string
-    alt: string
-    title?: string
-    link?: string
-    github?: string
+    src1: string;
+    src2: string;
+    alt: string;
+    className?: string;
+    title?: string;
+    link?: string;
+    github?: string;
 }) {
-    const router = useRouter()
+    const router = useRouter();
 
     const handleClick = (e: ReactMouseEvent<HTMLDivElement>) => {
-        e.stopPropagation()
+        e.stopPropagation();
         setTimeout(() => {
             if (/^(https?:\/\/|\/\/|mailto:|tel:)/i.test(link)) {
                 // external link — open in new tab
-                window.open(link, '_blank', 'noopener,noreferrer')
+                window.open(link, "_blank", "noopener,noreferrer");
             } else {
                 // internal route
-                router.push('/' + link.toLowerCase())
+                router.push("/" + link.toLowerCase());
             }
-        }, 100)
-    }
+        }, 100);
+    };
 
     const handleGithubClick = (e: ReactMouseEvent<HTMLDivElement>) => {
-        e.stopPropagation()
-        window.open(github, '_blank', 'noopener,noreferrer')
-    }
+        e.stopPropagation();
+        window.open(github, "_blank", "noopener,noreferrer");
+    };
 
     return (
-        <div className="hover-image-container" onClick={handleClick}>
+        <div
+            className={styles.container + " " + className}
+            onClick={handleClick}
+        >
             <img
                 src={src1}
                 alt={alt}
-                className="hover-image hover-image--default"
+                className={styles.image + " " + styles.imageDefault}
             />
             <img
                 src={src2}
                 alt={alt}
-                className="hover-image hover-image--hover"
+                className={styles.image + " " + styles.imageHover}
             />
-            <div className="hover-image__links-container">
-                {alt || title ?
-                    <h3 className="hover-image__title" onClick={handleClick}>
+            <div className={styles.linksContainer}>
+                {alt || title ? (
+                    <h3 className={styles.title} onClick={handleClick}>
                         {title}
                     </h3>
-                :   null}
-                {github && github.includes('https://github.com') ?
-                    <h3
-                        className="hover-image__title"
-                        onClick={handleGithubClick}
-                    >
+                ) : null}
+                {github && github.includes("https://github.com") ? (
+                    <h3 className={styles.title} onClick={handleGithubClick}>
                         repo
                     </h3>
-                :   null}
+                ) : null}
             </div>
         </div>
-    )
+    );
 }
 
-export default HoverImage
+export default HoverImage;

@@ -7,18 +7,9 @@
     margin: 20px;
 }
 
-.topicContainer {
-    .hover-image-container {
-        width: clamp(200px, 60vw, 300px);
-        height: clamp(200px, 60vw, 300px);
-        object-fit: contain;
-        aspect-ratio: 1/1;
-    }
-
-    .hover-image {
-        width: clamp(200px, 60vw, 300px);
-        height: clamp(200px, 60vw, 300px);
-    }
+.hoverImage {
+    aspect-ratio: 1/1;
+    align-self: stretch;
 }
 
 .techstack {
@@ -45,34 +36,19 @@
 
 @media (min-width: 767px) {
     .topicContainer {
-        .hover-image-container {
-            max-width: 300px;
-            width: 25vw;
-            height: 25vw;
-        }
-
-        .hover-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .hover-image__title {
-            font-size: 0.75rem;
-        }
-
         flex-direction: row;
+        align-items: stretch;
         gap: 20px;
+    }
+
+    .hoverImage {
+        flex: 1;
+        max-width: 300px;
     }
 }
 
 @media (min-width: 1100px) {
-    .topicContainer {
-        .hover-image-container {
-            max-width: none;
-        }
-        .hover-image__title {
-            font-size: initial;
-        }
+    .hoverImage {
+        max-width: none;
     }
 }

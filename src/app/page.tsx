@@ -1,6 +1,6 @@
-import HoverImage from './_components/hoverImage/HoverImage'
-import TechLabel from './_components/techLabel/TechLabel'
-import styles from './page.module.css'
+import HoverImage from "./_components/hoverImage/HoverImage";
+import TechLabel from "./_components/techLabel/TechLabel";
+import styles from "./page.module.css";
 
 function Home() {
     return (
@@ -31,17 +31,24 @@ function Home() {
                         src1="tim_art.png"
                         src2="tim_art_alt1.png"
                         alt="Artworks"
+                        className={styles.hoverImage}
                     />
-                    <HoverImage src1="tim2.png" src2="tim4.png" alt="Blog" />
+                    <HoverImage
+                        src1="tim2.png"
+                        src2="tim4.png"
+                        alt="Blog"
+                        className={styles.hoverImage}
+                    />
                     <HoverImage
                         src1="tim_prog.png"
                         src2="tim_prog_alt2.png"
                         alt="Projects"
+                        className={styles.hoverImage}
                     />
                 </div>
             </main>
         </>
-    )
+    );
 }
 
-export default Home
+export default Home;
