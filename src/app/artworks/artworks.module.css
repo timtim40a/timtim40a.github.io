@@ -32,6 +32,7 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     margin-bottom: 20px;
+    scrollbar-width: none;
 }
 
 .project-card {
