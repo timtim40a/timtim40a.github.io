@@ -9,7 +9,8 @@
 
 .hoverImage {
     aspect-ratio: 1/1;
-    align-self: stretch;
+    width: 100%;
+    margin-inline: auto;
 }
 
 .techstack {

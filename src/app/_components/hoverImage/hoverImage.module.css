@@ -1,6 +1,8 @@
 .container {
     position: relative;
     overflow: hidden;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .linksContainer {
@@ -16,6 +18,7 @@
 .title {
     color: var(--colour-dark);
     font-family: var(--font-pixel);
+    margin: 5px auto;
     padding: 2px 4px;
     background-color: var(--colour-orange);
     z-index: 20;
@@ -66,6 +69,11 @@
         padding: 5px 10px;
         background-color: var(--colour-dark);
         font-size: 0.75rem;
+    }
+
+    .container {
+        max-width: none;
+        max-height: none;
     }
 }
 

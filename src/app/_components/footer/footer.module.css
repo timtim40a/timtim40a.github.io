@@ -18,7 +18,7 @@
 }
 
 .text {
-    margin: 0;
+    margin: 0 0 0 10px;
     font-family: var(--font-mono);
     color: var(--colour-dark);
 }
@@ -30,15 +30,17 @@
     margin-left: auto;
 }
 
+@media (min-width: 500px) {
+    .logoContainer {
+        flex-direction: row;
+    }
+}
+
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
         align-items: center;
         width: 75vw;
         box-shadow: 10px 10px 0 0 var(--colour-orange-dark);
-    }
-
-    .logoContainer {
-        flex-direction: row;
     }
 }
