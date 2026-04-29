@@ -1,24 +1,24 @@
 import Link from "next/link";
-import "./Header.css";
+import styles from "./header.module.css";
 
 function Header() {
     return (
-        <header className="header">
-            <div className="header__title-container">
-                <h1 className="header__title">Tymur Soroka</h1>
-                <h2 className="header__subtitle">{"<tee-moor saw-raw-kah>"}</h2>
+        <header className={styles.container}>
+            <div className={styles.titleContainer}>
+                <h1 className={styles.title}>Tymur Soroka</h1>
+                <h2 className={styles.subtitle}>{"<tee-moor saw-raw-kah>"}</h2>
             </div>
-            <nav className="header__nav">
-                <Link className="nav__link" href="/">
+            <nav className={styles.nav}>
+                <Link className={styles.link} href="/">
                     Home
                 </Link>
-                <Link className="nav__link" href="/artworks">
+                <Link className={styles.link} href="/artworks">
                     Artworks
                 </Link>
-                <Link className="nav__link" href="/projects">
+                <Link className={styles.link} href="/projects">
                     Projects
                 </Link>
-                <Link className="nav__link" href="/blog">
+                <Link className={styles.link} href="/blog">
                     Blog
                 </Link>
             </nav>

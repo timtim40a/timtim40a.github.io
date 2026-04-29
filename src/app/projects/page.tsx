@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import { useEffect, useRef, useState } from "react";
 import ProjectCard from "../_components/projectCard/ProjectCard";
-import "./Projects.css";
+import styles from "./projects.module.css";
 
 type Project = {
     title: string;
@@ -42,14 +42,14 @@ function Projects() {
     return (
         <>
             <h2>Web Development</h2>
-            <div className="projects-section">
+            <div className={styles.section}>
                 <button
-                    className="projects-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(webRef, -1)}
                 >
                     &#8592;
                 </button>
-                <div className="projects-wrapper" ref={webRef}>
+                <div className={styles.wrapper} ref={webRef}>
                     {webProjects.map((p) => (
                         <ProjectCard
                             key={p.title}
@@ -64,21 +64,21 @@ function Projects() {
                     ))}
                 </div>
                 <button
-                    className="projects-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(webRef, 1)}
                 >
                     &#8594;
                 </button>
             </div>
             <h2>Other Projects</h2>
-            <div className="projects-section">
+            <div className={styles.section}>
                 <button
-                    className="projects-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(otherRef, -1)}
                 >
                     &#8592;
                 </button>
-                <div className="projects-wrapper" ref={otherRef}>
+                <div className={styles.wrapper} ref={otherRef}>
                     {otherProjects.map((p) => (
                         <ProjectCard
                             key={p.title}
@@ -93,13 +93,13 @@ function Projects() {
                     ))}
                 </div>
                 <button
-                    className="projects-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(otherRef, 1)}
                 >
                     &#8594;
                 </button>
             </div>
-            <p className="projects-description">
+            <p className={styles.description}>
                 I have experience in web development, having created multiple
                 projects using <strong>React</strong>, <strong>Node.js</strong>,
                 and other technologies. These include innovative solutions{" "}

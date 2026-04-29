@@ -1,4 +1,4 @@
-.footer {
+.container {
     padding: 20px;
     display: flex;
     background-color: var(--colour-orange);
@@ -6,19 +6,19 @@
     margin-top: auto;
 }
 
-.footer__logo {
+.logo {
     height: 40px;
     margin: 0 10px;
 }
 
-.footer__text {
+.text {
     margin: 0 auto;
     font-family: var(--font-mono);
     color: var(--colour-dark);
 }
 
 @media (min-width: 768px) {
-    .footer {
+    .container {
         flex-direction: row;
         align-items: center;
         width: 75vw;

@@ -1,9 +1,9 @@
-'use client'
+"use client";
 // src/pages/BlogPost.tsx
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import "./BlogPost.css";
+import styles from "./blogPost.module.css";
 
 type PostMeta = {
     slug: string;
@@ -45,7 +45,7 @@ function BlogPost() {
     if (!post) return <p>Loading...</p>;
 
     return (
-        <article>
+        <article className={styles.article}>
             <h2>{post.title}</h2>
             <small>{post.date}</small>
             <ReactMarkdown>{markdown}</ReactMarkdown>

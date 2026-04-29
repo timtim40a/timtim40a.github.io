@@ -1,7 +1,8 @@
-li {
+.post {
     border: 2px solid var(--colour-orange);
 }
 
-ul {
+.posts {
     padding-left: 0;
+    list-style: none;
 }

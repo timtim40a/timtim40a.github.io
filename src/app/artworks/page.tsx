@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import { useEffect, useRef, useState } from "react";
 import ArtworkCard from "../_components/artworkCard/ArtworkCard";
-import "./Artworks.css";
+import styles from "./artworks.module.css";
 
 type Artwork = {
     type: "artwork" | null;
@@ -41,7 +41,7 @@ function artworks() {
 
     return (
         <>
-            <p className="artworks-description">
+            <p className={styles.description}>
                 I practice multimedia art using various tools. I explore various
                 topics and mediums that appear alongside modern technologies,
                 integrating them into understandable formats. I stand for
@@ -49,14 +49,14 @@ function artworks() {
                 "creativity"
             </p>
             <h2>Visual Art</h2>
-            <div className="artworks-section">
+            <div className={styles.section}>
                 <button
-                    className="artworks-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(visualRef, -1)}
                 >
                     &#8592;
                 </button>
-                <div className="artworks-wrapper" ref={visualRef}>
+                <div className={styles.wrapper} ref={visualRef}>
                     {visualArtworks.map((p) => (
                         <ArtworkCard
                             type={p.type}
@@ -71,21 +71,21 @@ function artworks() {
                     ))}
                 </div>
                 <button
-                    className="artworks-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(visualRef, 1)}
                 >
                     &#8594;
                 </button>
             </div>
             <h2>Miscellaneous Art</h2>
-            <div className="artworks-section">
+            <div className={styles.section}>
                 <button
-                    className="artworks-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(otherRef, -1)}
                 >
                     &#8592;
                 </button>
-                <div className="artworks-wrapper" ref={otherRef}>
+                <div className={styles.wrapper} ref={otherRef}>
                     {otherArtworks.map((p) => (
                         <ArtworkCard
                             type={p.type}
@@ -100,7 +100,7 @@ function artworks() {
                     ))}
                 </div>
                 <button
-                    className="artworks-arrow"
+                    className={styles.arrow}
                     onClick={() => scroll(otherRef, 1)}
                 >
                     &#8594;

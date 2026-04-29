@@ -3,6 +3,8 @@
     flex-direction: column;
     padding: 10px;
     border: dashed 8px var(--colour-orange);
+    scroll-snap-align: center;
+    min-width: 90%;
 
     .hover-image {
         width: 100%;

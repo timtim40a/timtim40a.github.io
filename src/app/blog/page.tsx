@@ -1,8 +1,8 @@
-'use client'
+"use client";
 // src/pages/BlogIndex.tsx
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import "./BlogIndex.css";
+import styles from "./blogIndex.module.css";
 
 type PostMeta = {
     slug: string;
@@ -29,11 +29,13 @@ function BlogIndex() {
     return (
         <main>
             <h2>Blog</h2>
-            <ul>
+            <ul className={styles.posts}>
                 {posts.map((post) => (
-                    <li key={post.slug}>
+                    <li className={styles.post} key={post.slug}>
                         <h3>
-                            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                            <Link href={`/blog/${post.slug}`}>
+                                {post.title}
+                            </Link>
                         </h3>
                         <small>{post.date}</small>
                         <p>{post.summary}</p>
