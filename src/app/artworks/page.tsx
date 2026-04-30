@@ -3,18 +3,7 @@ import { useRef } from "react";
 import ArtworkCard from "../_components/artworkCard/ArtworkCard";
 import styles from "./artworks.module.css";
 import artworksDataRaw from "../../../public/artworks/artworks.json";
-
-type Artwork = {
-    type: "artwork" | null;
-    title: string;
-    description: string;
-    link: string;
-    img1: string;
-    img2?: string;
-    alt?: string;
-    github?: string;
-    category: string;
-};
+import Artwork from "../_types/Artwork";
 
 const artworksData = artworksDataRaw as Artwork[];
 
