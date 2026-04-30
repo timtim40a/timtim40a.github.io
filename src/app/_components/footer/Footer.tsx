@@ -17,6 +17,9 @@ function Footer() {
                             src="/linkedin-icon.png"
                         ></img>
                     </a>
+                    <a href="https://drive.google.com/uc?export=download&id=1NjKA0Db2y4gTaLnAR57I3sNJatZiB9E9">
+                        <img className={styles.logo} src="/cv-icon.svg"></img>
+                    </a>
                 </div>
                 <div className={styles.textContainer}>
                     <p className={styles.text}>

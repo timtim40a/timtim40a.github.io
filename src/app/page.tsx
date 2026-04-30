@@ -7,13 +7,31 @@ function Home() {
         <>
             <main className={styles.main}>
                 <div>
-                    <h2 className={styles.title}>Hi!</h2>
-                    <p className={styles.bio}>
-                        My name is in the header. I am a Full-stack software
-                        developer and multimedia artist based in Brighton. Click
-                        the photos below to get to know my work better.
-                    </p>
+                    <div className={styles.hero}>
+                        <div className={styles.heroTextContent}>
+                            <h2 className={styles.title}>Hi!</h2>
+                            <p className={styles.bio}>
+                                My name is in the header. I am a Full-stack
+                                software developer and multimedia artist based
+                                in Brighton. Click the photos below to get to
+                                know my work better.
+                            </p>
+                        </div>
+                        <div className={styles.heroDownloadContent}>
+                            <a href="https://drive.google.com/uc?export=download&id=1NjKA0Db2y4gTaLnAR57I3sNJatZiB9E9">
+                                <img
+                                    className={styles.logo}
+                                    src={"/cv-icon-orange.svg"}
+                                    alt="Download CV"
+                                />
+                            </a>
+                            <p className={styles.downloadText}>
+                                Download my CV
+                            </p>
+                        </div>
+                    </div>
                     <div className={styles.techstack}>
+                        <h3 className={styles.textDecoration}>{"<<"}</h3>
                         <TechLabel label="TypeScript" />
                         <TechLabel label="React" />
                         <TechLabel label="Redux" />
@@ -24,6 +42,7 @@ function Home() {
                         <TechLabel label="PostgreSQL" />
                         <TechLabel label="Headless CMS" />
                         <TechLabel label="Figma" />
+                        <h3 className={styles.textDecoration}>{">>"}</h3>
                     </div>
                 </div>
                 <div className={styles.topicContainer}>
