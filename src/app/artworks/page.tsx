@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import ArtworkCard from "../_components/artworkCard/ArtworkCard";
 import styles from "./artworks.module.css";
+import artworksDataRaw from "../../../public/artworks/artworks.json";
 
 type Artwork = {
     type: "artwork" | null;
@@ -15,16 +16,18 @@ type Artwork = {
     category: string;
 };
 
-function artworks() {
+const artworksData = artworksDataRaw as Artwork[];
+
+function Artworks() {
     const visualRef = useRef<HTMLDivElement>(null);
     const otherRef = useRef<HTMLDivElement>(null);
-    const [artworks, setArtworks] = useState<Artwork[]>([]);
 
-    useEffect(() => {
-        fetch("/artworks/artworks.json")
-            .then((res) => res.json())
-            .then((data: Artwork[]) => setArtworks(data));
-    }, []);
+    const visualArtworks = artworksData.filter(
+        (p) => p.category === "Visual Art"
+    );
+    const otherArtworks = artworksData.filter(
+        (p) => p.category !== "Visual Art"
+    );
 
     function scroll(ref: React.RefObject<HTMLDivElement | null>, dir: number) {
         if (ref.current) {
@@ -34,10 +37,6 @@ function artworks() {
             });
         }
     }
-
-    const visualArtworks = artworks.filter((p) => p.category === "Visual Art");
-    const otherArtworks = artworks.filter((p) => p.category !== "Visual Art");
-    console.log(artworks, visualArtworks, otherArtworks);
 
     return (
         <>
@@ -59,8 +58,8 @@ function artworks() {
                 <div className={styles.wrapper} ref={visualRef}>
                     {visualArtworks.map((p) => (
                         <ArtworkCard
-                            type={p.type}
                             key={p.title}
+                            type={p.type}
                             title={p.title}
                             description={p.description}
                             link={p.link}
@@ -77,6 +76,7 @@ function artworks() {
                     &#8594;
                 </button>
             </div>
+
             <h2>Miscellaneous Art</h2>
             <div className={styles.section}>
                 <button
@@ -88,8 +88,8 @@ function artworks() {
                 <div className={styles.wrapper} ref={otherRef}>
                     {otherArtworks.map((p) => (
                         <ArtworkCard
-                            type={p.type}
                             key={p.title}
+                            type={p.type}
                             title={p.title}
                             description={p.description}
                             link={p.link}
@@ -110,4 +110,4 @@ function artworks() {
     );
 }
 
-export default artworks;
+export default Artworks;

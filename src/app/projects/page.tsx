@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import projectsDataRaw from "../../../public/projects/projects.json";
 import ProjectCard from "../_components/projectCard/ProjectCard";
 import styles from "./projects.module.css";
 
@@ -14,16 +15,16 @@ type Project = {
     category: string;
 };
 
+const projectsData = projectsDataRaw as Project[];
+
 function Projects() {
     const webRef = useRef<HTMLDivElement>(null);
     const otherRef = useRef<HTMLDivElement>(null);
-    const [projects, setProjects] = useState<Project[]>([]);
 
-    useEffect(() => {
-        fetch("/projects/projects.json")
-            .then((res) => res.json())
-            .then((data: Project[]) => setProjects(data));
-    }, []);
+    const webProjects = projectsData.filter(
+        (p) => p.category === "Web Development"
+    );
+    const otherProjects = projectsData.filter((p) => p.category === "Other");
 
     function scroll(ref: React.RefObject<HTMLDivElement | null>, dir: number) {
         if (ref.current) {
@@ -33,11 +34,6 @@ function Projects() {
             });
         }
     }
-
-    const webProjects = projects.filter(
-        (p) => p.category === "Web Development"
-    );
-    const otherProjects = projects.filter((p) => p.category === "Other");
 
     return (
         <>
@@ -51,16 +47,7 @@ function Projects() {
                 </button>
                 <div className={styles.wrapper} ref={webRef}>
                     {webProjects.map((p) => (
-                        <ProjectCard
-                            key={p.title}
-                            title={p.title}
-                            description={p.description}
-                            link={p.link}
-                            img1={p.img1}
-                            img2={p.img2}
-                            alt={p.alt}
-                            github={p.github}
-                        />
+                        <ProjectCard key={p.title} {...p} />
                     ))}
                 </div>
                 <button
@@ -70,6 +57,7 @@ function Projects() {
                     &#8594;
                 </button>
             </div>
+
             <h2>Other Projects</h2>
             <div className={styles.section}>
                 <button
@@ -80,16 +68,7 @@ function Projects() {
                 </button>
                 <div className={styles.wrapper} ref={otherRef}>
                     {otherProjects.map((p) => (
-                        <ProjectCard
-                            key={p.title}
-                            title={p.title}
-                            description={p.description}
-                            link={p.link}
-                            img1={p.img1}
-                            img2={p.img2}
-                            alt={p.alt}
-                            github={p.github}
-                        />
+                        <ProjectCard key={p.title} {...p} />
                     ))}
                 </div>
                 <button
@@ -99,6 +78,7 @@ function Projects() {
                     &#8594;
                 </button>
             </div>
+
             <p className={styles.description}>
                 I have experience in web development, having created multiple
                 projects using <strong>React</strong>, <strong>Node.js</strong>,

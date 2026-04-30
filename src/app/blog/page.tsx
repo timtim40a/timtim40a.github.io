@@ -1,7 +1,6 @@
 "use client";
-// src/pages/BlogIndex.tsx
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import postsDataRaw from "../../../public/utils/posts.json";
 import styles from "./blogIndex.module.css";
 
 type PostMeta = {
@@ -12,20 +11,11 @@ type PostMeta = {
     tags: string[];
 };
 
+const posts = (postsDataRaw as PostMeta[]).sort(
+    (a, b) => +new Date(b.date) - +new Date(a.date)
+);
+
 function BlogIndex() {
-    const [posts, setPosts] = useState<PostMeta[]>([]);
-
-    useEffect(() => {
-        fetch("/utils/posts.json")
-            .then((res) => res.json())
-            .then((data: PostMeta[]) => {
-                const sorted = [...data].sort(
-                    (a, b) => +new Date(b.date) - +new Date(a.date)
-                );
-                setPosts(sorted);
-            });
-    }, []);
-
     return (
         <main>
             <h2>Blog</h2>

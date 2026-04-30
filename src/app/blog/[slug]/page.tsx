@@ -1,8 +1,8 @@
 "use client";
-// src/pages/BlogPost.tsx
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import postsDataRaw from "../../../../public/utils/posts.json";
 import styles from "./blogPost.module.css";
 
 type PostMeta = {
@@ -13,36 +13,22 @@ type PostMeta = {
     tags: string[];
 };
 
+const allPosts = postsDataRaw as PostMeta[];
+
 function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
-    const [post, setPost] = useState<PostMeta | null>(null);
     const [markdown, setMarkdown] = useState("");
 
+    const post = allPosts.find((p) => p.slug === slug) ?? null;
+
     useEffect(() => {
-        if (!slug) return;
+        if (!post) return;
+        fetch(`/blogs/${post.date}-${post.slug}.md`)
+            .then((res) => res.text())
+            .then((text) => setMarkdown(text));
+    }, [post]);
 
-        // 1. load metadata
-        fetch("/utils/posts.json")
-            .then((res) => res.json())
-            .then((all: PostMeta[]) => {
-                const found = all.find((p) => p.slug === slug);
-                if (!found) return;
-                setPost(found);
-
-                // 2. load markdown for this post
-                console.log(
-                    "Fetching blog post:",
-                    "/blogs/" + found.date + "-" + found.slug + ".md"
-                );
-                return fetch("/blogs/" + found.date + "-" + found.slug + ".md");
-            })
-            .then((res) => (res ? res.text() : ""))
-            .then((text) => {
-                if (text) setMarkdown(text);
-            });
-    }, [slug]);
-
-    if (!post) return <p>Loading...</p>;
+    if (!post) return <p>Post not found.</p>;
 
     return (
         <article className={styles.article}>
