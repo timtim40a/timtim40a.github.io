@@ -1,31 +1,17 @@
-"use client";
-import { useRef } from "react";
-import ArtworkCard from "../_components/artworkCard/ArtworkCard";
 import styles from "./artworks.module.css";
 import artworksDataRaw from "../../../public/artworks/artworks.json";
 import Artwork from "../_types/Artwork";
+import ArtworkCarousel from "../_components/artworkCarousel/ArtworkCarousel";
 
 const artworksData = artworksDataRaw as Artwork[];
 
 function Artworks() {
-    const visualRef = useRef<HTMLDivElement>(null);
-    const otherRef = useRef<HTMLDivElement>(null);
-
     const visualArtworks = artworksData.filter(
         (p) => p.category === "Visual Art"
     );
     const otherArtworks = artworksData.filter(
         (p) => p.category !== "Visual Art"
     );
-
-    function scroll(ref: React.RefObject<HTMLDivElement | null>, dir: number) {
-        if (ref.current) {
-            ref.current.scrollBy({
-                left: dir * ref.current.offsetWidth,
-                behavior: "smooth",
-            });
-        }
-    }
 
     return (
         <>
@@ -36,65 +22,9 @@ function Artworks() {
                 ethical AI usage and therefore disapprove of AI assisted
                 "creativity"
             </p>
-            <h2>Visual Art</h2>
-            <div className={styles.section}>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(visualRef, -1)}
-                >
-                    &#8592;
-                </button>
-                <div className={styles.wrapper} ref={visualRef}>
-                    {visualArtworks.map((p) => (
-                        <ArtworkCard
-                            key={p.title}
-                            type={p.type}
-                            title={p.title}
-                            description={p.description}
-                            link={p.link}
-                            img1={p.img1}
-                            img2={p.img2}
-                            alt={p.alt}
-                        />
-                    ))}
-                </div>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(visualRef, 1)}
-                >
-                    &#8594;
-                </button>
-            </div>
-
-            <h2>Miscellaneous Art</h2>
-            <div className={styles.section}>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(otherRef, -1)}
-                >
-                    &#8592;
-                </button>
-                <div className={styles.wrapper} ref={otherRef}>
-                    {otherArtworks.map((p) => (
-                        <ArtworkCard
-                            key={p.title}
-                            type={p.type}
-                            title={p.title}
-                            description={p.description}
-                            link={p.link}
-                            img1={p.img1}
-                            img2={p.img2}
-                            alt={p.alt}
-                        />
-                    ))}
-                </div>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(otherRef, 1)}
-                >
-                    &#8594;
-                </button>
-            </div>
+            <ArtworkCarousel title="Visual Art" artworks={visualArtworks} />
+            <ArtworkCarousel title="Other" artworks={otherArtworks} />
+            
         </>
     );
 }
