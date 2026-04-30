@@ -1,4 +1,4 @@
-"use client";
+// app/blog/page.tsx — Server Component (no directive)
 import Link from "next/link";
 import postsDataRaw from "../../../public/utils/posts.json";
 import styles from "./blogIndex.module.css";
@@ -15,7 +15,7 @@ const posts = (postsDataRaw as PostMeta[]).sort(
     (a, b) => +new Date(b.date) - +new Date(a.date)
 );
 
-function BlogIndex() {
+export default function BlogIndex() {
     return (
         <main>
             <h2>Blog</h2>
@@ -35,5 +35,3 @@ function BlogIndex() {
         </main>
     );
 }
-
-export default BlogIndex;

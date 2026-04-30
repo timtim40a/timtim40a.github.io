@@ -1,84 +1,19 @@
-"use client";
-import { useRef } from "react";
+// app/projects/page.tsx — Server Component (no directive)
 import projectsDataRaw from "../../../public/projects/projects.json";
-import ProjectCard from "../_components/projectCard/ProjectCard";
+import ProjectsCarousel from "../_components/projectCarousel/ProjectCarousel"; // client component
 import styles from "./projects.module.css";
 
-type Project = {
-    title: string;
-    description: string;
-    link: string;
-    img1: string;
-    img2?: string;
-    alt?: string;
-    github?: string;
-    category: string;
-};
 
-const projectsData = projectsDataRaw as Project[];
-
-function Projects() {
-    const webRef = useRef<HTMLDivElement>(null);
-    const otherRef = useRef<HTMLDivElement>(null);
-
-    const webProjects = projectsData.filter(
+export default function ProjectsPage() {
+    const webProjects = projectsDataRaw.filter(
         (p) => p.category === "Web Development"
     );
-    const otherProjects = projectsData.filter((p) => p.category === "Other");
-
-    function scroll(ref: React.RefObject<HTMLDivElement | null>, dir: number) {
-        if (ref.current) {
-            ref.current.scrollBy({
-                left: dir * ref.current.offsetWidth,
-                behavior: "smooth",
-            });
-        }
-    }
+    const otherProjects = projectsDataRaw.filter((p) => p.category === "Other");
 
     return (
         <>
-            <h2>Web Development</h2>
-            <div className={styles.section}>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(webRef, -1)}
-                >
-                    &#8592;
-                </button>
-                <div className={styles.wrapper} ref={webRef}>
-                    {webProjects.map((p) => (
-                        <ProjectCard key={p.title} {...p} />
-                    ))}
-                </div>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(webRef, 1)}
-                >
-                    &#8594;
-                </button>
-            </div>
-
-            <h2>Other Projects</h2>
-            <div className={styles.section}>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(otherRef, -1)}
-                >
-                    &#8592;
-                </button>
-                <div className={styles.wrapper} ref={otherRef}>
-                    {otherProjects.map((p) => (
-                        <ProjectCard key={p.title} {...p} />
-                    ))}
-                </div>
-                <button
-                    className={styles.arrow}
-                    onClick={() => scroll(otherRef, 1)}
-                >
-                    &#8594;
-                </button>
-            </div>
-
+            <ProjectsCarousel title="Web Development" projects={webProjects} />
+            <ProjectsCarousel title="Other Projects" projects={otherProjects} />
             <p className={styles.description}>
                 I have experience in web development, having created multiple
                 projects using <strong>React</strong>, <strong>Node.js</strong>,
@@ -93,5 +28,3 @@ function Projects() {
         </>
     );
 }
-
-export default Projects;
