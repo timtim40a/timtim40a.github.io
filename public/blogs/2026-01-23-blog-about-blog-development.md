@@ -9,3 +9,13 @@ I like the fact that I don't know who is reading this, it doesn't matter much. B
 #### What will be
 
 I will post about my web dev, programming, and gaming endeavours. Sometimes with a sprinkle of my _highly educated artistic_ view. Or maybe even drafts of something that may become a scientific paper in the future. If someone wants to follow this, drop me a mail on timtim40a@gmail.com and I will definitely create some kind of newsletter. Not sure it will ever happen, however you are free to prove me wrong!
+
+<!-- ```typescript
+const test : ExtraType = () => {haha} : void
+```
+
+> I heard a song, saying: "Do what you should, and be what will be"
+
+![Alttext](/ahome.jpg?width=30%)
+![Alttext](/ahome.jpg?width=30%)
+![Alttext](/ahome.jpg?width=30%) -->
