@@ -39,6 +39,9 @@ function BlogPost() {
             <small>{post.date}</small>
             <ReactMarkdown
                 components={{
+                    hr() {
+                        return <hr className={styles.divider} />;
+                    },
                     img({ src, alt }) {
                         const url = new URL(
                             typeof src === "string" ? src : "",
