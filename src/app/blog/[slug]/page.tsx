@@ -7,14 +7,7 @@ import styles from "./blogPost.module.css";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-type PostMeta = {
-    slug: string;
-    title: string;
-    date: string;
-    summary: string;
-    tags: string[];
-};
+import type PostMeta from "../../_types/PostMeta";
 
 const allPosts = postsDataRaw as PostMeta[];
 

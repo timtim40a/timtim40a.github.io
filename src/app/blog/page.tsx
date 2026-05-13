@@ -2,14 +2,7 @@
 import Link from "next/link";
 import postsDataRaw from "../../../public/utils/posts.json";
 import styles from "./blogIndex.module.css";
-
-type PostMeta = {
-    slug: string;
-    title: string;
-    date: string;
-    summary: string;
-    tags: string[];
-};
+import type PostMeta from "../_types/PostMeta";
 
 const posts = (postsDataRaw as PostMeta[]).sort(
     (a, b) => +new Date(b.date) - +new Date(a.date)
