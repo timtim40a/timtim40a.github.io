@@ -4,10 +4,10 @@ import path from "path";
 import type PostMeta from "@/app/_types/PostMeta";
 
 const BLOGS_DIR = path.join(process.cwd(), "public", "blogs");
-const JSON_PATH = path.join(process.cwd(), "public", "utils", "posts.json");
 
-function toDisplayName(stem: string): string {
-    return stem.replace(/[_-]/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+function toTitleFromStem(stem: string): string {
+    const parts = stem.split("-").slice(3);
+    return parts.join(" ").replace(/^\w/, (c) => c.toUpperCase());
 }
 
 function toDateFromStem(stem: string): string {
@@ -18,7 +18,7 @@ function toDateFromStem(stem: string): string {
 async function getSummaryFromMarkdown(filePath: string): Promise<string> {
     const content = await fs.promises.readFile(filePath, "utf-8");
     const lines = content.split("\n").filter((line) => line.trim() !== "");
-    return lines.slice(0, 3).join(" ");
+    return lines.slice(1, 3).join(" ").slice(0, 200) + "...";
 }
 
 async function getTagsFromMarkdown(filePath: string): Promise<string[]> {
@@ -41,7 +41,7 @@ export default async function checkBlogs() {
             const stem = path.basename(f.name, ".md");
             return {
                 slug: stem,
-                title: toDisplayName(stem),
+                title: toTitleFromStem(stem),
                 date: toDateFromStem(stem),
                 summary: await getSummaryFromMarkdown(filePath),
                 tags: await getTagsFromMarkdown(filePath),
