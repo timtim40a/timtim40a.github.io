@@ -6,3 +6,21 @@
     padding-left: 0;
     list-style: none;
 }
+
+.topPane {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--colour-orange);
+    color: var(--colour-dark);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}

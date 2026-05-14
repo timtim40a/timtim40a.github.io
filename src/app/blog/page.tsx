@@ -13,11 +13,20 @@ export default async function BlogIndex() {
             <ul className={styles.posts}>
                 {posts.map((post) => (
                     <li className={styles.post} key={post.slug}>
-                        <h3>
-                            <Link href={`/blog/${post.slug}`}>
-                                {post.title}
-                            </Link>
-                        </h3>
+                        <div className={styles.topPane}>
+                            <h3>
+                                <Link href={`/blog/${post.slug}`}>
+                                    {post.title}
+                                </Link>
+                            </h3>
+                            <div className={styles.tags}>
+                                {post.tags.map((tag) => (
+                                    <span className={styles.tag} key={tag}>
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                         <small>{post.date}</small>
                         <p>{post.summary}</p>
                     </li>
