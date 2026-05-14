@@ -1,79 +1,21 @@
-"use client";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import postsDataRaw from "../../../../public/utils/posts.json";
-import styles from "./blogPost.module.css";
+import checkBlogs from "@/lib/checkBlogs";
+import fs from "fs/promises";
+import path from "path";
+import BlogPost from "./BlogPost"; // client component
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
-import type PostMeta from "../../_types/PostMeta";
-
-const allPosts = postsDataRaw as PostMeta[];
-
-function BlogPost() {
-    const { slug } = useParams<{ slug: string }>();
-    const [markdown, setMarkdown] = useState("");
-
-    const post = allPosts.find((p) => p.slug === slug) ?? null;
-
-    useEffect(() => {
-        if (!post) return;
-        fetch(`/blogs/${post.date}-${post.slug}.md`)
-            .then((res) => res.text())
-            .then((text) => setMarkdown(text));
-    }, [post]);
-
-    if (!post) return <p>Post not found.</p>;
-
-    return (
-        <article className={styles.article}>
-            <h2>{post.title}</h2>
-            <small>{post.date}</small>
-            <ReactMarkdown
-                components={{
-                    hr() {
-                        return <hr className={styles.divider} />;
-                    },
-                    img({ src, alt }) {
-                        const url = new URL(
-                            typeof src === "string" ? src : "",
-                            "http://x"
-                        );
-                        const width = url.searchParams.get("width") ?? "100%";
-                        const height = url.searchParams.get("height") ?? "auto";
-                        const cleanSrc =
-                            (typeof src === "string" ? src : "").split(
-                                "?"
-                            )[0] ?? "";
-
-                        return (
-                            <img
-                                src={cleanSrc}
-                                alt={alt ?? ""}
-                                style={{ width, height, objectFit: "cover" }}
-                            />
-                        );
-                    },
-                    code({ className, children }) {
-                        const match = /language-(\w+)/.exec(className || "");
-                        return match ? (
-                            <SyntaxHighlighter
-                                style={tomorrow}
-                                language={match[1]}
-                            >
-                                {String(children).replace(/\n$/, "")}
-                            </SyntaxHighlighter>
-                        ) : (
-                            <code className={className}>{children}</code>
-                        );
-                    },
-                }}
-            >
-                {markdown}
-            </ReactMarkdown>
-        </article>
-    );
+export async function generateStaticParams() {
+    const posts = await checkBlogs();
+    return posts.map((p) => ({ slug: p.slug }));
 }
 
-export default BlogPost;
+export default async function Page({ params }: { params: { slug: string } }) {
+    const posts = await checkBlogs();
+    const post = posts.find((p) => p.slug === params.slug);
+    if (!post) return <p>Post not found.</p>;
+
+    const markdown = await fs.readFile(
+        path.join(process.cwd(), "public", "blogs", `${post.slug}.md`),
+        "utf-8"
+    );
+    return <BlogPost post={post} markdown={markdown} />;
+}

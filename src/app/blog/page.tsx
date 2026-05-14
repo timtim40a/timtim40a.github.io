@@ -1,14 +1,12 @@
 // app/blog/page.tsx — Server Component (no directive)
 import Link from "next/link";
-import postsDataRaw from "../../../public/utils/posts.json";
 import styles from "./blogIndex.module.css";
-import type PostMeta from "../_types/PostMeta";
+import checkBlogs from "@/lib/checkBlogs";
 
-const posts = (postsDataRaw as PostMeta[]).sort(
-    (a, b) => +new Date(b.date) - +new Date(a.date)
-);
-
-export default function BlogIndex() {
+export default async function BlogIndex() {
+    const posts = (await checkBlogs()).sort(
+        (a, b) => +new Date(b.date) - +new Date(a.date)
+    );
     return (
         <main>
             <h2>Blog</h2>
