@@ -83,6 +83,10 @@ function BlogPost({ post, markdown }: BlogPostProps) {
                             <code className={className}>{children}</code>
                         );
                     },
+
+                    ul({ children }) {
+                        return <ul className={styles.ul}>{children}</ul>;
+                    },
                 }}
             >
                 {addFigureNumbers(markdown)}

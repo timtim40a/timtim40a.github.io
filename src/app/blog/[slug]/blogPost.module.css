@@ -8,6 +8,14 @@
     small {
         margin: 10px;
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-top: 35px;
+    }
 }
 
 .divider {
@@ -27,4 +35,11 @@
 .figcaption {
     margin-top: 10px;
     text-align: center;
+}
+
+.ul {
+    margin: 10px 40px;
+    font-family: var(--font-mono);
+    color: var(--colour-orange-light);
+    list-style: square;
 }
