@@ -8,6 +8,14 @@
     small {
         margin: 10px;
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-top: 35px;
+    }
 }
 
 .divider {
@@ -15,4 +23,23 @@
     height: 1px;
     border-color: var(--colour-orange);
     margin: 0 0 20px 0;
+}
+
+.figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.figcaption {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.ul {
+    margin: 10px 40px;
+    font-family: var(--font-mono);
+    color: var(--colour-orange-light);
+    list-style: square;
 }
