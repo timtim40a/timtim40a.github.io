@@ -10,7 +10,7 @@ function Artworks() {
         (p) => p.category === "Visual Art"
     );
     const otherArtworks = artworksData.filter(
-        (p) => p.category !== "Visual Art"
+        (p) => p.category === "Web Development"
     );
 
     return (
