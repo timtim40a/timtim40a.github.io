@@ -30,6 +30,12 @@
     }
 }
 
+.container:focus-visible,
+.title:focus-visible {
+    outline: 3px solid var(--colour-orange);
+    outline-offset: 2px;
+}
+
 .logo {
     color: var(--colour-orange);
     font-family: var(--font-pixel);
