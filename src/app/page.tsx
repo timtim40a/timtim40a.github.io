@@ -42,6 +42,8 @@ function Home() {
                         <TechLabel label="PostgreSQL" />
                         <TechLabel label="Headless CMS" />
                         <TechLabel label="Figma" />
+                        <TechLabel label="Claude API" />
+                        <TechLabel label="Claude Code" />
                         <h3 className={styles.textDecoration}>{">>"}</h3>
                     </div>
                 </div>
