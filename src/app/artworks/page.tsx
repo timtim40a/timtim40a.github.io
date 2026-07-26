@@ -14,7 +14,7 @@ function Artworks() {
     );
 
     return (
-        <>
+        <main>
             <p className={styles.description}>
                 I practice multimedia art using various tools. I explore various
                 topics and mediums that appear alongside modern technologies,
@@ -24,8 +24,7 @@ function Artworks() {
             </p>
             <ArtworkCarousel title="Visual Art" artworks={visualArtworks} />
             <ArtworkCarousel title="Other" artworks={otherArtworks} />
-            
-        </>
+        </main>
     );
 }
 
