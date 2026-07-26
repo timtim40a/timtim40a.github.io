@@ -42,3 +42,9 @@ next-env.d.ts
 
 #obsidian vault files
 .obsidian
+
+# CLAUDE
+CLAUDE.md
+
+#archive
+_archive

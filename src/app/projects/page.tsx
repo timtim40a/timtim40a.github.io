@@ -11,7 +11,7 @@ export default function ProjectsPage() {
     const otherProjects = projectsDataRaw.filter((p) => p.category === "Other");
 
     return (
-        <>
+        <main>
             <ProjectsCarousel title="Web Development" projects={webProjects} />
             <ProjectsCarousel title="Other Projects" projects={otherProjects} />
             <p className={styles.description}>
@@ -25,6 +25,6 @@ export default function ProjectsPage() {
                 able to) push the boundaries of what's possible with web
                 technologies.
             </p>
-        </>
+        </main>
     );
 }

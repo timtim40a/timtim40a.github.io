@@ -88,5 +88,15 @@
         "alt": "",
         "github": "https://github.com/timtim40a/Automaton",
         "category": "Other"
+    },
+    {
+        "title": "Glossary Builder",
+        "description": "Python, PyInstaller. A tool that scans documents or codebases for headings and key terms, generating a browsable HTML glossary page linking each entry. Packaged as a standalone executable.",
+        "link": "",
+        "img1": "glossarybuilder.png",
+        "img2": "glossarybuilder.png",
+        "alt": "link",
+        "github": "https://github.com/timtim40a/glossary-builder-python",
+        "category": "Other"
     }
 ]
