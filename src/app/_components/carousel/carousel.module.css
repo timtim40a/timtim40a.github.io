@@ -8,7 +8,9 @@
 
 .frame {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     width: 100%;
     max-width: 800px;
@@ -46,35 +48,89 @@
     cursor: default;
 }
 
+/* Mobile-first: the arrows and indicator ticks form one control bar that
+   wraps below the card (order 2-4), so the card itself (order 1, its own
+   full-width row) never has to share width with the controls. At the
+   desktop breakpoint below, the arrows flank the card instead. */
+.arrowPrev {
+    order: 2;
+}
+
+.arrowNext {
+    order: 4;
+}
+
 .viewport {
+    /* Without this, slides' offsetLeft (used by scrollToIndex/handleScroll
+       below) is measured relative to the nearest *positioned* ancestor —
+       which, absent this, is nothing closer than the page body — instead of
+       this scroll container, throwing every scroll-target calculation off
+       by however far this element sits from the page's left edge. */
+    position: relative;
+    order: 1;
     display: flex;
     gap: 20px;
-    flex: 1 1 auto;
+    flex: 0 0 100%;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    padding-inline: calc((100% - min(90%, 340px)) / 2);
 }
 
 .viewport::-webkit-scrollbar {
     display: none;
 }
 
+/* --slide-width is set by Carousel.tsx's syncSizing effect, computed from
+   the same stable reference (viewport.clientWidth) the centering padding
+   above uses — see the comment there for why a plain CSS percentage here
+   (relative to .viewport's own, padding-shrunk content box) can't work.
+   The min(90%, 340px) fallback only covers the brief pre-JS/no-JS case. */
 .slide {
     display: flex;
-    flex: 0 0 min(85%, 340px);
-    scroll-snap-align: start;
-}
-
-@media (min-width: 768px) {
-    .slide {
-        flex-basis: min(70%, 700px);
-    }
+    flex: 0 0 var(--slide-width, min(90%, 340px));
+    scroll-snap-align: center;
 }
 
 .indicators {
+    order: 3;
+    flex: 1 1 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 4px;
-    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .arrowPrev {
+        order: 1;
+    }
+
+    .viewport {
+        order: 2;
+        /* An explicit zero basis, not "auto": .viewport's content scrolls
+           arbitrarily wide, so an "auto" basis resolves to that huge
+           preferred width for the wrap-fitting check below, pushing the
+           arrows onto their own lines even though there's ample room. */
+        flex: 1 1 0;
+        padding-inline: calc((100% - min(70%, 700px)) / 2);
+    }
+
+    .arrowNext {
+        order: 3;
+    }
+
+    .indicators {
+        order: 4;
+        flex-basis: 100%;
+    }
+
+    .slide {
+        /* Same var(--slide-width) as the base rule, just a different
+           no-JS/pre-JS fallback — must not hardcode this outright, or it
+           permanently shadows the JS-computed value at this breakpoint. */
+        flex-basis: var(--slide-width, min(70%, 700px));
+    }
 }
 
 /* Ticks stay visually 8x8 per the site's pixel-art scale; the arrow buttons
