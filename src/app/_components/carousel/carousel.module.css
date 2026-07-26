@@ -6,6 +6,10 @@
     margin-bottom: 20px;
 }
 
+/* No max-width: .section is already width:100% of <main>, and <main>
+   matches the header's own width (globals.css / header.module.css both use
+   75vw at this breakpoint, 100vw below it) — so the carousel's outer frame
+   lines up with the header exactly, at any viewport width. */
 .frame {
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +17,6 @@
     justify-content: center;
     gap: 10px;
     width: 100%;
-    max-width: 800px;
     margin: 0 auto;
     padding: 10px;
     border: 2px solid var(--colour-orange-dark);
@@ -113,7 +116,7 @@
            preferred width for the wrap-fitting check below, pushing the
            arrows onto their own lines even though there's ample room. */
         flex: 1 1 0;
-        padding-inline: calc((100% - min(70%, 700px)) / 2);
+        padding-inline: calc((100% - min(90%, 1200px)) / 2);
     }
 
     .arrowNext {
@@ -129,7 +132,7 @@
         /* Same var(--slide-width) as the base rule, just a different
            no-JS/pre-JS fallback — must not hardcode this outright, or it
            permanently shadows the JS-computed value at this breakpoint. */
-        flex-basis: var(--slide-width, min(70%, 700px));
+        flex-basis: var(--slide-width, min(90%, 1200px));
     }
 }
 

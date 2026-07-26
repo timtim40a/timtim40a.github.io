@@ -52,8 +52,8 @@ export default function Carousel<T>({
             const viewport = viewportRef.current;
             if (!viewport) return;
             const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-            const ratio = isDesktop ? 0.7 : 0.9;
-            const cap = isDesktop ? 700 : 340;
+            const ratio = 0.9;
+            const cap = isDesktop ? 1200 : 340;
             const slideWidth = Math.min(viewport.clientWidth * ratio, cap);
             const pad = Math.max(0, (viewport.clientWidth - slideWidth) / 2);
             viewport.style.setProperty("--slide-width", `${slideWidth}px`);
