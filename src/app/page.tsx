@@ -52,18 +52,24 @@ function Home() {
                         src1="tim_art.png"
                         src2="tim_art_alt1.png"
                         alt="Artworks"
+                        label="Artworks"
+                        href="/artworks"
                         className={styles.hoverImage}
                     />
                     <HoverImage
                         src1="tim2.png"
                         src2="tim4.png"
                         alt="Blog"
+                        label="Blog"
+                        href="/blog"
                         className={styles.hoverImage}
                     />
                     <HoverImage
                         src1="tim_prog.png"
                         src2="tim_prog_alt2.png"
                         alt="Projects"
+                        label="Projects"
+                        href="/projects"
                         className={styles.hoverImage}
                     />
                 </div>

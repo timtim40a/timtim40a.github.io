@@ -29,8 +29,9 @@ function ProjectCard({
                     src1={img1}
                     src2={img2}
                     alt={alt}
-                    link={link ? link : ""}
-                    github={github ? github : ""}
+                    label="link"
+                    href={link}
+                    github={github}
                     className="project-card__hover-image"
                 />
             ) : (
