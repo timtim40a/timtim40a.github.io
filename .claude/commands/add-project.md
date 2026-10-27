@@ -6,13 +6,12 @@ You are adding one new entry to `public/projects/projects.json`, the data source
 
 ## Schema and conventions (read `public/projects/projects.json` first for live examples)
 
-Each entry: `{ title, description, link, img1, img2?, alt?, github?, category }` (see `src/app/_types/Project.tsx`).
+Each entry: `{ title, description, link, img1, img2?, github?, category }` (see `src/app/_types/Project.tsx`).
 
 - `category` must be **exactly** `"Web Development"` or `"Other"` (case-sensitive) — `page.tsx` filters on these two literal strings, so anything else silently never renders. Never invent a third category.
 - `img1`/`img2` are bare filenames (e.g. `"silverlining.png"`) resolved against `public/` **root** — never `public/projects/`. That folder holds only `projects.json`.
-- When there's no separate hover-swap image, existing entries reuse the same filename for both `img1` and `img2`.
+- `img2` is the hover-swap image. Omit it when there isn't a separate one — the card then reuses `img1`.
 - `link` and `github` default to `""` when not applicable (see the "Cellular Automaton" entry).
-- `alt` is conventionally the literal string `"link"` in existing entries — use that unless the user wants something else.
 - Filenames for new images should match the existing lower-kebab style (`kochivnyky.png`, `graph-algorithms-visualiser.png`), not a generic source name like `IMG_2031.png`.
 
 ## Steps
@@ -25,7 +24,7 @@ Each entry: `{ title, description, link, img1, img2?, alt?, github?, category }`
    - If a path was given, verify the file exists. If not, say so and ask again.
    - If no path was given at all, explicitly ask again for one. Do not proceed without a real image and do not substitute a placeholder — every existing card has a real screenshot/thumbnail.
    - Once you have a valid file, pick a destination filename in the existing lower-kebab convention, derived from the title if the source filename is generic.
-   - If the user didn't give a separate second image, set `img2` equal to `img1`.
+   - If the user didn't give a separate second image, omit `img2`.
 
 4. **Resolve category:**
    - If the user named one, normalize it to exactly `"Web Development"` or `"Other"`.
@@ -36,7 +35,7 @@ Each entry: `{ title, description, link, img1, img2?, alt?, github?, category }`
    - Without a link, generate from whatever fields *are* filled, and clearly flag anything generated as "generated — please review" in step 7.
    - If title is missing, derive a short one from the repo name or description subject.
 
-6. **Fill remaining defaults:** `link: ""` and `github: ""` if not supplied; `alt: "link"`.
+6. **Fill remaining defaults:** `link: ""` and `github: ""` if not supplied.
 
 7. **Confirm before writing.** Show the user the full assembled JSON object, flagging any fields you generated rather than were given, and wait for their go-ahead.
 

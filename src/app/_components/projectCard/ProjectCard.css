@@ -12,7 +12,6 @@
     max-width: 300px;
     aspect-ratio: 1 / 1;
     margin-top: auto;
-    margin-bottom: none;
 }
 
 .project-card__text-container {
@@ -26,43 +25,21 @@
     margin: 0 20px;
 }
 
-.project-card__image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* .project-card__title {
-
-}
-
-.project-card__description {
-} */
-
-@media (min-width: 786px) {
+@media (min-width: 1100px) {
     .project-card {
-        display: flex;
         flex-direction: row;
     }
 
     .project-card__hover-image {
         width: 50%;
         max-width: none;
-        aspect-ratio: 1 / 1;
         margin-bottom: auto;
-        margin-top: none;
     }
 
     .project-card__text-container {
         width: 50%;
     }
 
-    .project-card__description {
-        font-size: smaller;
-    }
-}
-
-@media (min-width: 1100px) {
     .project-card__description {
         font-size: initial;
     }

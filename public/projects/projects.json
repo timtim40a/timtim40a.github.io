@@ -4,8 +4,6 @@
         "description": "A portfolio website for a modern improvisation theatre group \"Kochivnyky\" (of which I am proudly part of). Built with React, TypeScript, Next.js and Sanity CMS.",
         "link": "https://kochivnyky-portfolio.vercel.app/",
         "img1": "portfolioKochivnyky.png",
-        "img2": "portfolioKochivnyky.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/kochivnyky-portfolio",
         "category": "Web Development"
     },
@@ -14,8 +12,6 @@
         "description": "Professional artist's portfolio featuring unique design and responsive layout. React, TypeScript, Next.js, Sanity CMS.",
         "link": "https://altuniaa-portfolio.vercel.app/",
         "img1": "portfolioAlona.png",
-        "img2": "portfolioAlona.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/altuniaa-portfolio",
         "category": "Web Development"
     },
@@ -24,8 +20,6 @@
         "description": "Three.js based random house generator. To be used as an ever changing interactive postcard. Gifted in 2026.",
         "link": "https://ahome.timtimsays.art",
         "img1": "ahome.jpg",
-        "img2": "ahome.jpg",
-        "alt": "link",
         "github": "https://github.com/timtim40a/ahome",
         "category": "Web Development"
     },
@@ -34,8 +28,6 @@
         "description": "Typescript, React, Redux accessibility tool that can convert enormous volumes of texts like your favourite novels into a single scrolling marquee line. Regulate the speed, font size and more! Isn't it awesome?",
         "link": "https://silverlining.timtimsays.art",
         "img1": "silverlining.png",
-        "img2": "silverlining.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/silverlining",
         "category": "Web Development"
     },
@@ -45,7 +37,6 @@
         "link": "https://graph-algorithms-visualiser-psi.vercel.app/",
         "img1": "graph-algorithms-visualiser.png",
         "img2": "graph-algorithms-visualiser2.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/graph-algorithms-visualiser",
         "category": "Web Development"
     },
@@ -55,7 +46,6 @@
         "link": "https://technative-academy.github.io/novel-forest/ask/",
         "img1": "novel-forest.png",
         "img2": "novel-forest2.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/novel-forest",
         "category": "Web Development"
     },
@@ -65,7 +55,6 @@
         "link": "https://framebox-backend-production.up.railway.app/api/docs/",
         "img1": "framebox.png",
         "img2": "framebox2.png",
-        "alt": "link",
         "github": "https://github.com/technative-academy/FrameBox-Backend",
         "category": "Web Development"
     },
@@ -75,7 +64,6 @@
         "link": "https://timtim40a.github.io/kochivnyky/",
         "img1": "kochivnyky.png",
         "img2": "kochivnyky2.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/kochivnyky",
         "category": "Other"
     },
@@ -85,7 +73,6 @@
         "link": "",
         "img1": "automaton.png",
         "img2": "automaton2.png",
-        "alt": "",
         "github": "https://github.com/timtim40a/Automaton",
         "category": "Other"
     },
@@ -94,8 +81,6 @@
         "description": "Python, PyInstaller. A tool that scans documents or codebases for headings and key terms, generating a browsable HTML glossary page linking each entry. Packaged as a standalone executable.",
         "link": "",
         "img1": "glossarybuilder.png",
-        "img2": "glossarybuilder.png",
-        "alt": "link",
         "github": "https://github.com/timtim40a/glossary-builder-python",
         "category": "Other"
     }

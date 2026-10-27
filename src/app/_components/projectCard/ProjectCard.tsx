@@ -1,4 +1,5 @@
 import HoverImage from "../hoverImage/HoverImage";
+import type Project from "@/app/_types/Project";
 import "./ProjectCard.css";
 
 function ProjectCard({
@@ -7,36 +8,23 @@ function ProjectCard({
     link,
     img1,
     img2,
-    alt = title,
     github,
-}: {
-    title: string;
-    description: string;
-    link: string;
-    img1: string;
-    img2?: string;
-    alt?: string;
-    github?: string;
-}) {
+}: Project) {
     return (
         <div className="project-card">
             <div className="project-card__text-container">
                 <h3 className="project-card__title">{title}</h3>
                 <p className="project-card__description">{description}</p>
             </div>
-            {img2 ? (
-                <HoverImage
-                    src1={img1}
-                    src2={img2}
-                    alt={alt}
-                    label="link"
-                    href={link}
-                    github={github}
-                    className="project-card__hover-image"
-                />
-            ) : (
-                <img className="project-card__image" src={img1} alt={alt} />
-            )}
+            <HoverImage
+                src1={img1}
+                src2={img2 ?? img1}
+                alt={title}
+                label="link"
+                href={link}
+                github={github}
+                className="project-card__hover-image"
+            />
         </div>
     );
 }

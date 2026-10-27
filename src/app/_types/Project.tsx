@@ -4,7 +4,6 @@ type Project = {
     link: string;
     img1: string;
     img2?: string;
-    alt?: string;
     github?: string;
     category: string;
 };
