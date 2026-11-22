@@ -42,15 +42,20 @@
         aspect-ratio: 1 / 1;
     }
 
+    /* On leave, the tile stays on top until its 0.1s fade-out ends. */
     .project-card__tile {
         position: absolute;
         inset: 0 0 auto;
-        transition: transform 0.3s ease-in-out;
+        z-index: 0;
+        transition:
+            transform 0.3s ease-in-out,
+            z-index 0.1s step-end;
     }
 
     .project-card__tile:hover {
         transform: scale(1.05);
         z-index: 1;
+        transition: transform 0.3s ease-in-out;
     }
 
     /* The border is the tile's last child, so it paints over the thumbnail. */
