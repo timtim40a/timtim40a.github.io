@@ -22,7 +22,7 @@ export default function ProjectsPage() {
                 full-stack web-apps (database management, user authentication,
                 API integration), and quirky creative projects that explore the
                 intersection of technology and art. I love to (and proud to be
-                able to) push the boundaries of what's possible with web
+                able to) push the boundaries of what&apos;s possible with web
                 technologies.
             </p>
         </main>

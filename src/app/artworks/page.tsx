@@ -20,7 +20,7 @@ function Artworks() {
                 topics and mediums that appear alongside modern technologies,
                 integrating them into understandable formats. I stand for
                 ethical AI usage and therefore disapprove of AI assisted
-                "creativity"
+                &quot;creativity&quot;
             </p>
             <ArtworkCarousel title="Visual Art" artworks={visualArtworks} />
             <ArtworkCarousel title="Other" artworks={otherArtworks} />

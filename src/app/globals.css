@@ -47,9 +47,6 @@ a {
     color: var(--colour-orange-light);
     text-decoration: inherit;
 }
-a:hover {
-    color: var(--colour-orange-light);
-}
 
 body {
     margin: 0;
@@ -122,9 +119,6 @@ main {
     :root {
         color: var(--colour-dark);
         background-color: #ffffff;
-    }
-    a:hover {
-        color: var(--colour-orange-light);
     }
     button {
         background-color: #f9f9f9;

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import checkBlogs from "@/lib/checkBlogs";
 import fs from "fs/promises";
 import path from "path";
@@ -12,7 +13,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const { slug } = await params;
     const posts = await checkBlogs();
     const post = posts.find((p) => p.slug === slug);
-    if (!post) return <p>Post not found.</p>;
+    if (!post) notFound();
 
     const markdown = await fs.readFile(
         path.join(process.cwd(), "public", "blogs", `${post.slug}.md`),
