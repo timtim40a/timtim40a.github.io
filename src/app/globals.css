@@ -1,18 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Press+Start+2P&display=swap");
-
-.fira-code-regular {
-    font-family: "Fira Code", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.press-start-2p-regular {
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
 
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

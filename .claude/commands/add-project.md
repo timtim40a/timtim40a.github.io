@@ -42,6 +42,6 @@ Each entry: `{ title, description, link, img1, img2?, github?, category }` (see 
 8. **Apply changes** (only after confirmation):
    - Copy the source image file(s) into `public/` root under the destination filename(s) from step 3.
    - Append the new object into the array in `public/projects/projects.json`, matching its existing 4-space indent style. Keep valid JSON (no trailing comma).
-   - Do not touch `public/artworks/artworks.json` or `public/utils/posts.json` — separate content types, out of scope. If the user mentions this project is also an artwork, note that cross-listing there is a separate manual step; don't do it automatically.
+   - Do not touch `public/artworks/artworks.json` — separate content type, out of scope. If the user mentions this project is also an artwork, note that cross-listing there is a separate manual step; don't do it automatically.
 
 9. **Report and verify.** Summarize what was written/generated, then remind the user to run `npm run dev` and check `/projects` in the browser to confirm the new card renders in the right carousel with the thumbnail loading correctly.

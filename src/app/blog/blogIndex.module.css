@@ -66,16 +66,8 @@
     gap: 10px;
 }
 
-.tagButtons {
-    display: flex;
-    gap: 10px;
-}
-
+.searchButton:hover,
 .tagButton:hover {
-    box-shadow: 1px 1px 0 0 var(--colour-orange-dark);
-    transform: translate(6px, 6px);
-}
-.searchButton:hover {
     box-shadow: 1px 1px 0 0 var(--colour-orange-dark);
     transform: translate(6px, 6px);
 }

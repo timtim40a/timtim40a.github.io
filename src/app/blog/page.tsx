@@ -35,8 +35,6 @@ export default async function BlogIndex({
                         <button type="submit" className={styles.searchButton}>
                             Search
                         </button>
-                        {/* <button className={styles.filterButton}>Filter</button>
-                        <button className={styles.sortButton}>Sort</button> */}
                     </div>
                 </form>
                 <div className={styles.tags}>
