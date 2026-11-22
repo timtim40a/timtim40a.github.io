@@ -1,6 +1,6 @@
 // app/_components/carousel/Carousel.tsx — Client Component
 "use client";
-import { useEffect, useId, useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import type { KeyboardEvent, ReactNode } from "react";
 import styles from "./carousel.module.css";
 
@@ -39,42 +39,6 @@ export default function Carousel<T>({
     const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [activeIndex, setActiveIndex] = useState(0);
     const scrollRaf = useRef<number | null>(null);
-
-    // Centering the first/last slide needs symmetric run-up padding on the
-    // viewport sized to half the leftover space around a slide — but that's
-    // only solvable if the slide's own width and the padding aren't defined
-    // in terms of each other. If .slide's width were a CSS percentage of
-    // .viewport's content box (as it naively could be), and padding is then
-    // chosen to center that width, the two equations are circular: shrinking
-    // the content box (more padding) shrinks the slide, which calls for even
-    // more padding, diverging toward all-padding-no-content. So instead both
-    // the slide width and the padding are derived here from the same stable,
-    // padding-independent reference (viewport.clientWidth, which doesn't
-    // change as the padding/content split inside it changes), and the slide
-    // width is handed to CSS via a custom property rather than a percentage
-    // — see --slide-width in carousel.module.css. The ratio/cap constants
-    // must be kept in sync with that file's breakpoint.
-    useEffect(() => {
-        const viewport = viewportRef.current;
-        if (!viewport) return;
-
-        function syncSizing() {
-            const viewport = viewportRef.current;
-            if (!viewport) return;
-            const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-            const ratio = 0.9;
-            const cap = isDesktop ? 1200 : 340;
-            const slideWidth = Math.min(viewport.clientWidth * ratio, cap);
-            const pad = Math.max(0, (viewport.clientWidth - slideWidth) / 2);
-            viewport.style.setProperty("--slide-width", `${slideWidth}px`);
-            viewport.style.paddingInline = `${pad}px`;
-        }
-
-        syncSizing();
-        const observer = new ResizeObserver(syncSizing);
-        observer.observe(viewport);
-        return () => observer.disconnect();
-    }, [items.length]);
 
     if (items.length === 0) return null;
 

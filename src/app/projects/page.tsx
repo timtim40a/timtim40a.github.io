@@ -1,19 +1,11 @@
-// app/projects/page.tsx — Server Component (no directive)
-import projectsDataRaw from "../../../public/projects/projects.json";
-import ProjectsCarousel from "../_components/projectCarousel/ProjectCarousel"; // client component
+import projects from "../../../public/projects/projects.json";
+import ProjectsCarousel from "../_components/projectCarousel/ProjectCarousel";
 import styles from "./projects.module.css";
 
-
 export default function ProjectsPage() {
-    const webProjects = projectsDataRaw.filter(
-        (p) => p.category === "Web Development"
-    );
-    const otherProjects = projectsDataRaw.filter((p) => p.category === "Other");
-
     return (
         <main>
-            <ProjectsCarousel title="Web Development" projects={webProjects} />
-            <ProjectsCarousel title="Other Projects" projects={otherProjects} />
+            <ProjectsCarousel title="Projects" projects={projects} />
             <p className={styles.description}>
                 I have experience in web development, having created multiple
                 projects using <strong>React</strong>, <strong>Node.js</strong>,

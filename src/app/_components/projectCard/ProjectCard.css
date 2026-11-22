@@ -1,47 +1,50 @@
 .project-card {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: dashed 8px var(--colour-orange);
-    scroll-snap-align: center;
-    min-width: 90%;
+    flex: 1;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
-.project-card__hover-image {
-    width: 100%;
-    max-width: 300px;
+.project-card__square {
+    position: relative;
     aspect-ratio: 1 / 1;
-    margin-top: auto;
-    align-self: center;
 }
 
-.project-card__text-container {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
+.project-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card__title {
+    position: absolute;
+    inset: 0 0 auto;
+    margin: 0;
+    padding: 10px 10px 30px;
+    background: linear-gradient(black, transparent);
 }
 
 .project-card__description {
+    margin: 0;
+    padding: 10px;
     font-size: smaller;
-    margin: 0 20px;
+    background-color: var(--colour-dark);
 }
 
-@media (min-width: 1100px) {
-    .project-card {
-        flex-direction: row;
-    }
-
-    .project-card__hover-image {
-        width: 50%;
-        max-width: none;
-        margin-bottom: auto;
-    }
-
-    .project-card__text-container {
-        width: 50%;
+/* Desktop: the description appears under the square on hover, over the row below. */
+@media (min-width: 768px) {
+    .project-card:hover {
+        transform: scale(1.05);
+        z-index: 1;
     }
 
     .project-card__description {
-        font-size: initial;
+        display: none;
+        position: absolute;
+        inset: 100% 0 auto;
+    }
+
+    .project-card:hover .project-card__description {
+        display: block;
     }
 }

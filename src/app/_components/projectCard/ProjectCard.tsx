@@ -1,30 +1,29 @@
-import HoverImage from "../hoverImage/HoverImage";
 import type Project from "@/app/_types/Project";
+import labels from "../hoverImage/hoverImage.module.css";
 import "./ProjectCard.css";
 
-function ProjectCard({
-    title,
-    description,
-    link,
-    img1,
-    img2,
-    github,
-}: Project) {
+const newTab = { target: "_blank", rel: "noopener noreferrer" };
+
+function ProjectCard({ title, description, link, img1, github }: Project) {
     return (
         <div className="project-card">
-            <div className="project-card__text-container">
+            <div className="project-card__square">
+                <img className="project-card__image" src={img1} alt="" />
                 <h3 className="project-card__title">{title}</h3>
-                <p className="project-card__description">{description}</p>
+                <div className={labels.linksContainer}>
+                    {link && (
+                        <a href={link} {...newTab} className={labels.title}>
+                            link
+                        </a>
+                    )}
+                    {github && (
+                        <a href={github} {...newTab} className={labels.title}>
+                            repo
+                        </a>
+                    )}
+                </div>
             </div>
-            <HoverImage
-                src1={img1}
-                src2={img2 ?? img1}
-                alt={title}
-                label="link"
-                href={link}
-                github={github}
-                className="project-card__hover-image"
-            />
+            <p className="project-card__description">{description}</p>
         </div>
     );
 }

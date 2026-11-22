@@ -1,4 +1,3 @@
-// app/projects/ProjectsCarousel.tsx — Client Component
 "use client";
 import Carousel from "@/app/_components/carousel/Carousel";
 import ProjectCard from "@/app/_components/projectCard/ProjectCard";
