@@ -42,14 +42,20 @@
         aspect-ratio: 1 / 1;
     }
 
-    /* On leave, the tile stays on top until its 0.1s fade-out ends. */
+    /* On leave, the tile stays on top until its 0.1s fade-out ends. Only its
+       visible parts take the mouse, not the space of the hidden description. */
     .project-card__tile {
         position: absolute;
         inset: 0 0 auto;
         z-index: 0;
+        pointer-events: none;
         transition:
             transform 0.3s ease-in-out,
             z-index 0.1s step-end;
+    }
+
+    .project-card__tile > * {
+        pointer-events: auto;
     }
 
     .project-card__tile:hover {
@@ -67,25 +73,22 @@
         pointer-events: none;
     }
 
-    /* Border and description ease in slowly and out very quickly, so
-       nothing lingers behind neighbouring tiles. */
+    /* Border and description ease in slowly and out very quickly.
+       visibility (unlike display) waits for the fade in every browser. */
     .project-card__tile::after,
     .project-card__description {
-        display: none;
+        display: block;
+        visibility: hidden;
         opacity: 0;
         transition:
             opacity 0.1s ease-out,
-            display 0.1s allow-discrete;
+            visibility 0.1s;
     }
 
     .project-card__tile:hover::after,
     .project-card__tile:hover .project-card__description {
-        display: block;
+        visibility: visible;
         opacity: 1;
         transition: opacity 0.3s ease-in;
-
-        @starting-style {
-            opacity: 0;
-        }
     }
 }
