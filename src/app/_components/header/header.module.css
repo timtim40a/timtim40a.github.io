@@ -13,6 +13,10 @@
     flex-direction: column;
 }
 
+.titleContainer:hover > * {
+    text-decoration: underline;
+}
+
 .title {
     font-family: var(--font-pixel);
     color: var(--colour-dark);
