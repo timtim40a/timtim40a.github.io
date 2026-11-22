@@ -1,11 +1,11 @@
 import projects from "../../../public/projects/projects.json";
-import ProjectsCarousel from "../_components/projectCarousel/ProjectCarousel";
+import TileCarousel from "../_components/tileCarousel/TileCarousel";
 import styles from "./projects.module.css";
 
 export default function ProjectsPage() {
     return (
         <main>
-            <ProjectsCarousel title="Projects" projects={projects} />
+            <TileCarousel title="Projects" tiles={projects} />
             <p className={styles.description}>
                 I have experience in web development, having created multiple
                 projects using <strong>React</strong>, <strong>Node.js</strong>,

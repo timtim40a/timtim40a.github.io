@@ -2,14 +2,14 @@
 description: Interactively add a new project card to the portfolio (public/projects/projects.json + thumbnail).
 ---
 
-You are adding one new entry to `public/projects/projects.json`, the data source for the Projects page (`src/app/projects/page.tsx`, rendered via `ProjectCarousel`/`ProjectCard`). Follow this procedure.
+You are adding one new entry to `public/projects/projects.json`, the data source for the Projects page (`src/app/projects/page.tsx`, rendered via `TileCarousel`/`Tile`). Follow this procedure.
 
 ## Schema and conventions (read `public/projects/projects.json` first for live examples)
 
-Each entry: `{ title, description, link, img1, github? }` (see `src/app/_types/Project.tsx`).
+Each entry: `{ title, description, img, link?, github? }` (see `src/app/_types/Tile.tsx`; `slideshow` is for artworks only).
 
-- `img1` is a bare filename (e.g. `"silverlining.png"`) resolved against `public/` **root** — never `public/projects/`. That folder holds only `projects.json`. It's shown as a square tile, cropped to fit.
-- `link` and `github` default to `""` when not applicable (see the "Cellular Automaton" entry).
+- `img` is a bare filename (e.g. `"silverlining.png"`) resolved against `public/` **root** — never `public/projects/`. That folder holds only `projects.json`. It's shown as a square tile, cropped to fit.
+- Leave `link` / `github` out entirely when not applicable (see the "Cellular Automaton" entry) — never store empty strings.
 - Filenames for new images should match the existing lower-kebab style (`kochivnyky.png`, `graph-algorithms-visualiser.png`), not a generic source name like `IMG_2031.png`.
 
 ## Steps
@@ -25,16 +25,14 @@ Each entry: `{ title, description, link, img1, github? }` (see `src/app/_types/P
 
 4. **Resolve description/title when omitted:**
    - If a GitHub or live link is available, fetch it (WebFetch) to ground a 1–3 sentence description matching the tone/length of existing entries (concise, mentions tech stack/purpose — compare the "Silver Lining" or "Framebox-Backend" entries).
-   - Without a link, generate from whatever fields *are* filled, and clearly flag anything generated as "generated — please review" in step 6.
+   - Without a link, generate from whatever fields *are* filled, and clearly flag anything generated as "generated — please review" in step 5.
    - If title is missing, derive a short one from the repo name or description subject.
 
-5. **Fill remaining defaults:** `link: ""` and `github: ""` if not supplied.
+5. **Confirm before writing.** Show the user the full assembled JSON object, flagging any fields you generated rather than were given, and wait for their go-ahead.
 
-6. **Confirm before writing.** Show the user the full assembled JSON object, flagging any fields you generated rather than were given, and wait for their go-ahead.
-
-7. **Apply changes** (only after confirmation):
+6. **Apply changes** (only after confirmation):
    - Copy the source image file into `public/` root under the destination filename from step 3.
    - Append the new object into the array in `public/projects/projects.json`, matching its existing 4-space indent style. Keep valid JSON (no trailing comma).
    - Do not touch `public/artworks/artworks.json` — separate content type, out of scope. If the user mentions this project is also an artwork, note that cross-listing there is a separate manual step; don't do it automatically.
 
-8. **Report and verify.** Summarize what was written/generated, then remind the user to run `npm run dev` and check `/projects` in the browser to confirm the new tile renders with the thumbnail loading correctly.
+7. **Report and verify.** Summarize what was written/generated, then remind the user to run `npm run dev` and check `/projects` in the browser to confirm the new tile renders with the thumbnail loading correctly.
