@@ -36,12 +36,16 @@
     .project-card:hover {
         transform: scale(1.05);
         z-index: 1;
+        outline: 2px solid var(--colour-orange);
+        outline-offset: -2px;
     }
 
     .project-card__description {
         display: none;
         position: absolute;
         inset: 100% 0 auto;
+        border: 2px solid var(--colour-orange);
+        border-top: 0;
     }
 
     .project-card:hover .project-card__description {
