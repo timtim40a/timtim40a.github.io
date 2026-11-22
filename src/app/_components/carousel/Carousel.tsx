@@ -4,6 +4,16 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { KeyboardEvent, ReactNode } from "react";
 import styles from "./carousel.module.css";
 
+// Firefox (and forks like LibreWolf) restores a button's `disabled` state on
+// reload before hydration, so an arrow the user had enabled comes back
+// mismatching the server HTML. autocomplete="off" opts the arrows out; React's
+// types just don't list it for <button>.
+declare module "react" {
+    interface ButtonHTMLAttributes<T> extends HTMLAttributes<T> {
+        autoComplete?: string;
+    }
+}
+
 type Props<T> = {
     title: string;
     items: T[];
@@ -144,6 +154,7 @@ export default function Carousel<T>({
                         className={`${styles.arrow} ${styles.arrowPrev}`}
                         onClick={() => scrollToIndex(activeIndex - 1)}
                         disabled={activeIndex === 0}
+                        autoComplete="off"
                         aria-label={`Previous slide in ${title}`}
                     >
                         &#8592;
@@ -179,6 +190,7 @@ export default function Carousel<T>({
                         className={`${styles.arrow} ${styles.arrowNext}`}
                         onClick={() => scrollToIndex(activeIndex + 1)}
                         disabled={activeIndex === items.length - 1}
+                        autoComplete="off"
                         aria-label={`Next slide in ${title}`}
                     >
                         &#8594;
