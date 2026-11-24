@@ -11,6 +11,7 @@
    75vw at this breakpoint, 100vw below it) — so the carousel's outer frame
    lines up with the header exactly, at any viewport width. */
 .frame {
+    container-type: inline-size;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -51,10 +52,8 @@
     cursor: default;
 }
 
-/* Mobile-first: the arrows and indicator ticks form one control bar that
-   wraps below the card (order 2-4), so the card itself (order 1, its own
-   full-width row) never has to share width with the controls. At the
-   desktop breakpoint below, the arrows flank the card instead. */
+/* Phones: the arrows and indicator ticks form one control bar that wraps
+   below the card (order 2-4), so the card (order 1) gets a full-width row. */
 .arrowPrev {
     order: 2;
 }
@@ -77,21 +76,19 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding-inline: calc((100% - min(90%, 340px)) / 2);
+    /* Centres the first/last slide. cqw is .frame's width, which (unlike %)
+       doesn't shrink as this padding grows, so the slide and padding sizes
+       aren't circular. */
+    padding-inline: calc((100cqw - min(90cqw, 340px)) / 2);
 }
 
 .viewport::-webkit-scrollbar {
     display: none;
 }
 
-/* --slide-width is set by Carousel.tsx's syncSizing effect, computed from
-   the same stable reference (viewport.clientWidth) the centering padding
-   above uses — see the comment there for why a plain CSS percentage here
-   (relative to .viewport's own, padding-shrunk content box) can't work.
-   The min(90%, 340px) fallback only covers the brief pre-JS/no-JS case. */
 .slide {
     display: flex;
-    flex: 0 0 var(--slide-width, min(90%, 340px));
+    flex: 0 0 min(90cqw, 340px);
     scroll-snap-align: center;
 }
 
@@ -104,35 +101,18 @@
     gap: 4px;
 }
 
+/* Desktop: every item at once, as a grid. */
 @media (min-width: 768px) {
-    .arrowPrev {
-        order: 1;
+    .arrow,
+    .indicators {
+        display: none;
     }
 
     .viewport {
-        order: 2;
-        /* An explicit zero basis, not "auto": .viewport's content scrolls
-           arbitrarily wide, so an "auto" basis resolves to that huge
-           preferred width for the wrap-fitting check below, pushing the
-           arrows onto their own lines even though there's ample room. */
-        flex: 1 1 0;
-        padding-inline: calc((100% - min(90%, 1200px)) / 2);
-    }
-
-    .arrowNext {
-        order: 3;
-    }
-
-    .indicators {
-        order: 4;
-        flex-basis: 100%;
-    }
-
-    .slide {
-        /* Same var(--slide-width) as the base rule, just a different
-           no-JS/pre-JS fallback — must not hardcode this outright, or it
-           permanently shadows the JS-computed value at this breakpoint. */
-        flex-basis: var(--slide-width, min(90%, 1200px));
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        overflow: visible;
+        padding-inline: 0;
     }
 }
 

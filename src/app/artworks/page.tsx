@@ -1,18 +1,8 @@
 import styles from "./artworks.module.css";
-import artworksDataRaw from "../../../public/artworks/artworks.json";
-import Artwork from "../_types/Artwork";
-import ArtworkCarousel from "../_components/artworkCarousel/ArtworkCarousel";
-
-const artworksData = artworksDataRaw as Artwork[];
+import artworks from "../../../public/artworks/artworks.json";
+import TileCarousel from "../_components/tileCarousel/TileCarousel";
 
 function Artworks() {
-    const visualArtworks = artworksData.filter(
-        (p) => p.category === "Visual Art"
-    );
-    const otherArtworks = artworksData.filter(
-        (p) => p.category === "Web Development"
-    );
-
     return (
         <main>
             <p className={styles.description}>
@@ -20,10 +10,9 @@ function Artworks() {
                 topics and mediums that appear alongside modern technologies,
                 integrating them into understandable formats. I stand for
                 ethical AI usage and therefore disapprove of AI assisted
-                "creativity"
+                &quot;creativity&quot;
             </p>
-            <ArtworkCarousel title="Visual Art" artworks={visualArtworks} />
-            <ArtworkCarousel title="Other" artworks={otherArtworks} />
+            <TileCarousel title="Artworks" tiles={artworks} />
         </main>
     );
 }

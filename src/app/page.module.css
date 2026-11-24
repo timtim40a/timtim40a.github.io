@@ -22,17 +22,11 @@
 }
 
 .title {
-    font-family: var(--font-pixel);
-    color: var(--colour-orange);
     font-size: 2.5rem;
-    margin: 20px;
 }
 
 .bio {
-    font-family: var(--font-mono);
-    color: var(--colour-orange);
     font-size: 1.125rem;
-    margin: 20px;
 }
 
 .textDecoration {

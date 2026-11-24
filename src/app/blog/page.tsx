@@ -8,7 +8,7 @@ export default async function BlogIndex({
     searchParams: Promise<{ q?: string }>;
 }) {
     const { q } = await searchParams;
-    const query = (q ? decodeURIComponent(q) : "").toLowerCase();
+    const query = (q ?? "").toLowerCase();
 
     const posts = (await checkBlogs())
         .sort((a, b) => +new Date(b.date) - +new Date(a.date))
@@ -35,8 +35,6 @@ export default async function BlogIndex({
                         <button type="submit" className={styles.searchButton}>
                             Search
                         </button>
-                        {/* <button className={styles.filterButton}>Filter</button>
-                        <button className={styles.sortButton}>Sort</button> */}
                     </div>
                 </form>
                 <div className={styles.tags}>

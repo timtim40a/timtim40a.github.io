@@ -24,9 +24,8 @@ async function getSummaryFromMarkdown(filePath: string): Promise<string> {
 async function getTagsFromMarkdown(filePath: string): Promise<string[]> {
     const content = await fs.promises.readFile(filePath, "utf-8");
     const lines = content.split("\n").filter((line) => line.trim() !== "");
-    const tagLine = lines[lines.length - 1]?.trim(); // Remove the leading and trailing brackets
-    console.log(`Extracted tag line from ${filePath}:`, tagLine);
-    return tagLine ? tagLine.split(", ").map((s) => s.trim()) : [];
+    const tagLine = lines[lines.length - 1]?.trim();
+    return tagLine?.startsWith("#") ? tagLine.split(/\s+/) : [];
 }
 
 export default async function checkBlogs() {

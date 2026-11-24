@@ -18,6 +18,8 @@
 .title {
     color: var(--colour-dark);
     font-family: var(--font-pixel);
+    font-size: 0.75rem;
+    font-weight: bold;
     margin: 5px auto;
     padding: 2px 4px;
     background-color: var(--colour-orange);
@@ -30,21 +32,9 @@
     }
 }
 
-.container:focus-visible,
 .title:focus-visible {
     outline: 3px solid var(--colour-orange);
     outline-offset: 2px;
-}
-
-.logo {
-    color: var(--colour-orange);
-    font-family: var(--font-pixel);
-    font-size: medium;
-    padding: 5px 10px;
-    background-color: var(--colour-dark);
-    z-index: 20;
-    height: 40px;
-    margin: 0 10px;
 }
 
 .image {
@@ -55,17 +45,14 @@
 }
 
 .imageHover {
-    position: absolute;
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
     z-index: 10;
 }
 
-.imageHover:hover {
-    opacity: 1;
-}
-
-.imageHover:target {
+.imageHover:hover,
+.imageHover:active,
+.container:has(:focus-visible) .imageHover {
     opacity: 1;
 }
 
@@ -74,7 +61,6 @@
         color: var(--colour-orange);
         padding: 5px 10px;
         background-color: var(--colour-dark);
-        font-size: 0.75rem;
     }
 
     .container {
